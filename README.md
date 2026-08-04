@@ -115,8 +115,8 @@ Ganti semua nilai di berkas ini:
 
 ### 2. Halaman sampul — `frontmatter/cover.tex`
 
-- Ganti logo dengan meng-*overwrite* `figures/logo kemenkes.png` atau sesuaikan perintah `\includegraphics[width=8cm]{figures/logo kemenkes.png}`.
-- Logo bawaan (`logo kemenkes.png`) adalah logo institusi pembuat template dan bersifat opsional. Untuk institusi lain, ganti berkas logo Anda; jika tidak ingin logo, hapus baris `\includegraphics` di `cover.tex`.
+- Ganti logo dengan meng-*overwrite* `figures/logo_institusi.png` atau sesuaikan perintah `\includegraphics[width=4cm,height=4cm,keepaspectratio]{figures/logo_institusi.png}`.
+- Logo bawaan (`logo_institusi.png`) adalah contoh logo institusi pembuat template dan bersifat opsional. Untuk institusi lain, ganti berkas logo Anda; jika tidak ingin logo, hapus baris `\includegraphics` di `cover.tex`.
 
 ### 3. Abstrak — `frontmatter/abstract.tex`
 
