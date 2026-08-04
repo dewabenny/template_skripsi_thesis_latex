@@ -1,0 +1,28 @@
+# LaTeX build artifacts
+output/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.xdv
+*.bbl-SAVE-ERROR
+*.pdf
+
+# macOS
+.DS_Store
+
+# Editor / IDE
+*.code-workspace
+
+# Temporary files
+*~
+*.swp

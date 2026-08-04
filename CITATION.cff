@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Silakan kutip template ini jika digunakan dalam karya tulis Anda."
+title: "Template LaTeX Penulisan Ilmiah"
+authors:
+  - family-names: "Prabawa"
+    given-names: "Dewa Gede Benny Raharja"
+    title: "dr."
+    suffix: "M.Biomed, Sp.M"
+keywords:
+  - "LaTeX"
+  - "template"
+  - "penulisan ilmiah"
+  - "proposal penelitian"
+  - "laporan penelitian"
+  - "biblatex"
+license: "MIT"
+date-released: "2026-08-04"
+version: "1.0.0"
