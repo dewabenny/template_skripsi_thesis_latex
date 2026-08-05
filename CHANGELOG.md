@@ -15,6 +15,7 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Perintah reusable `\makecover` (judul opsional + jenis dokumen opsional) di `preamble/command.tex`.
 
 ### Berubah
+- `main.tex` memakai `\include` (bukan `\input`) untuk bab-bab dan menyediakan `\includeonly` (komentar) untuk kompilasi cepat.
 - `preamble/package.tex` → `preamble/packages.tex` dan `preamble/setting.tex` → `preamble/settings.tex` (konsistensi penamaan sesuai AGENTS.md).
 - `preamble/settings.tex` kini hanya meng-*import* modul di `preamble/setting/` (satu tanggung jawab per modul).
 - Konfigurasi `hyperref` dipindah dari `packages.tex` ke `setting/hyperlink.tex`.

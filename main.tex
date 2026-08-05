@@ -5,16 +5,27 @@
 \input{preamble/settings}
 \input{preamble/command}
 
+% ================================================================
+% INCLUDEONLY
+% Kompilasi cepat: hanya memuat bab tertentu, misalnya
+%   \includeonly{chapters/01_pendahuluan, chapters/02_tinjauan_pustaka}
+% Catatan: nomor halaman/sitasi bisa berubah karena file .aux lain
+% tidak ikut diproses. Gunakan untuk editing cepat, lalu build penuh.
+% ================================================================
+
+%\includeonly{chapters/01_pendahuluan}
+
 \begin{document}
 
 \input{frontmatter/cover}
 \input{frontmatter/abstract}
 \input{frontmatter/toctables}
-\input{chapters/01_pendahuluan}
-\input{chapters/02_tinjauan_pustaka}
-\input{chapters/03_metode_penelitian}
-\input{chapters/04_hasil_pembahasan}
-\input{chapters/05_penutup}
-\input{chapters/06_daftar_pustaka}
+
+\include{chapters/01_pendahuluan}
+\include{chapters/02_tinjauan_pustaka}
+\include{chapters/03_metode_penelitian}
+\include{chapters/04_hasil_pembahasan}
+\include{chapters/05_penutup}
+\include{chapters/06_daftar_pustaka}
 
 \end{document}
