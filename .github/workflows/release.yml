@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live + packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-extra \
+            texlive-lualatex texlive-bibtex-extra \
+            texlive-fonts-recommended latexmk biber lmodern
+
+      - name: Compile document
+        run: |
+          latexmk -lualatex -outdir=output main.tex
+
+      - name: Create release archive
+        run: |
+          mkdir -p dist
+          cp output/main.pdf dist/
+          tar -czf dist/framework-source.tar.gz \
+            main.tex preamble frontmatter chapters \
+            bibliography figures themes docs \
+            Makefile .latexmkrc README.md CHANGELOG.md LICENSE
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/main.pdf
+            dist/framework-source.tar.gz

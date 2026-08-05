@@ -18,6 +18,7 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Paket `xcolor` di `preamble/packages.tex` (dibutuhkan tema).
 - Dokumentasi Markdown di `docs/`: `index`, `installation`, `architecture`, `packages`, `settings`, `metadata`, `bibliography`, `themes`, `troubleshooting`, `faq`.
 - Target Makefile baru: `make pdf`, `make watch`, `make release`, `make lint`.
+- GitHub Actions: `.github/workflows/compile.yml` (compile + upload artifact) dan `.github/workflows/release.yml` (release otomatis saat tag `v*`).
 
 ### Berubah
 - `main.tex` memanggil `\usetheme{classic}` (default).
