@@ -1,0 +1,42 @@
+% ================================================================
+% CONTOH — PENGGUNAAN CLASS FILE
+% Cukup tulis \documentclass{academic-id}; seluruh framework dimuat
+% otomatis (metadata, packages, settings, command).
+%
+% Identitas dokumen diisi di preamble/metadata.tex.
+% Kompilasi dari ROOT proyek:
+%   latexmk -lualatex -outdir=output examples/class/main.tex
+% ================================================================
+
+\documentclass{academic-id}
+
+\begin{document}
+
+\makecover[][Proposal Penelitian]
+
+\input{frontmatter/abstract}
+
+\chapter{Pendahuluan}
+\section{Latar Belakang}
+Contoh pemakaian class file \texttt{academic-id}. Semua pengaturan dan
+perintah framework tersedia otomatis, tanpa perlu meng-import preamble
+secara manual.\supercite{negrelGlobalImpactEye1998a}
+
+\section{Tujuan}
+Menunjukkan cara memakai framework sebagai class file.
+
+\chapter{Metode}
+\section{Desain}
+Contoh deskriptif sederhana.
+
+\Table{tab:contoh}{
+  \begin{tabular}{ll}
+  \toprule
+  Variabel & Keterangan \\
+  \bottomrule
+  \end{tabular}
+}{Contoh tabel dengan perintah \texttt{\textbackslash Table}.}
+
+\printbibliography[title={Daftar Pustaka}]
+
+\end{document}

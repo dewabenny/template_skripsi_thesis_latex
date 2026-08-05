@@ -22,11 +22,14 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Contoh di `examples/`: `proposal`, `thesis`, `dissertation`, `book` (memakai framework yang sama; build dengan `make examples`).
 - Dokumentasi website MkDocs Material: `mkdocs.yml`, `docs/requirements.txt`, halaman `commands.md` dan `examples.md`.
 - GitHub Actions `.github/workflows/docs.yml` untuk deploy situs dokumentasi ke GitHub Pages.
+- Class file `academic-id.cls` — membungkus seluruh framework (metadata, packages, settings, command) sehingga cukup `\documentclass{academic-id}`.
+- Contoh `examples/class/` untuk pemakaian class file.
 
 ### Berubah
 - `main.tex` memanggil `\usetheme{classic}` (default).
 - Makefile lama diperluas mendukung latexmk penuh (`-pvc`, `-c`, `-C`) dan validasi log.
 - README merujuk ke `docs/` untuk dokumentasi detail.
+- `make examples` mencakup contoh `class`.
 - `main.tex` memakai `\include` (bukan `\input`) untuk bab-bab dan menyediakan `\includeonly` (komentar) untuk kompilasi cepat.
 - `chapters/03_metode_penelitian.tex` memakai `\Equation` dan `chapters/04_hasil_pembahasan.tex` memakai `\Figure`/`\Table` sebagai contoh.
 - `preamble/package.tex` → `preamble/packages.tex` dan `preamble/setting.tex` → `preamble/settings.tex` (konsistensi penamaan sesuai AGENTS.md).

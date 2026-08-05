@@ -113,6 +113,7 @@ preamble):
 
 | Contoh | Jenis | Tema |
 |--------|-------|------|
+| `examples/class/` | Penggunaan class file `academic-id` | classic |
 | `examples/proposal/` | Proposal penelitian | classic |
 | `examples/thesis/` | Tesis (master's thesis) | modern |
 | `examples/dissertation/` | Disertasi | book |
@@ -132,6 +133,30 @@ latexmk -lualatex -outdir=output examples/thesis/main.tex
 
 Jadikan salah satu contoh sebagai titik awal dokumen Anda: salin foldernya,
 lalu isi `metadata`, bab, dan referensi.
+
+## Class File (`academic-id.cls`)
+
+Gunakan framework sebagai **class file** — seluruh modul (metadata, packages,
+settings, command) dimuat otomatis:
+
+```latex
+\documentclass{academic-id}
+
+\begin{document}
+\makecover
+\input{frontmatter/abstract}
+\include{chapters/01_pendahuluan}
+% ...
+\end{document}
+```
+
+- Identitas dokumen tetap diisi di `preamble/metadata.tex`.
+- Compile dari root proyek (class membaca modul relatif terhadap struktur
+  framework standar).
+- Contoh pemakaian: `examples/class/main.tex`.
+
+> Roadmap: versi masa depan akan membuat class file mandiri (self-contained)
+> tanpa bergantung pada struktur folder framework.
 
 ## Struktur Proyek
 

@@ -47,7 +47,7 @@ lint:
 	fi
 
 # Build semua contoh di examples/ (masing-masing ke output/<nama>-example.pdf)
-EXAMPLES = proposal thesis dissertation book
+EXAMPLES = class proposal thesis dissertation book
 
 examples:
 	@for ex in $(EXAMPLES); do \

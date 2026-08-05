@@ -8,6 +8,7 @@ dari root — tidak ada duplikasi preamble.
 
 | Contoh | Jenis | Tema |
 |--------|-------|------|
+| `examples/class/` | Penggunaan class file `academic-id` | classic |
 | `examples/proposal/` | Proposal penelitian | classic |
 | `examples/thesis/` | Tesis (master's thesis) | modern |
 | `examples/dissertation/` | Disertasi | book |
@@ -24,6 +25,7 @@ make examples
 Hasil:
 
 ```
+output/class-example.pdf
 output/proposal-example.pdf
 output/thesis-example.pdf
 output/dissertation-example.pdf
