@@ -20,7 +20,7 @@
 % ================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{academic-id}[2026/08/06 v0.2.0 Indonesian Academic LaTeX Framework]
+\ProvidesClass{academic-id}[2026/08/06 v2.0.0 Indonesian Academic LaTeX Framework]
 
 % Prefix path menuju akar framework. Kosong bila dokumen di root;
 % untuk proyek turunan (mis. examples/<jenis>/) gunakan "../../".

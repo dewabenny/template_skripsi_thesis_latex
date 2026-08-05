@@ -4,7 +4,12 @@ Semua perubahan penting pada Template LaTeX Penulisan Ilmiah akan dicatat di ber
 
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan versi mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 
-## [Unreleased]
+## [2.0.0] - 2026-08-06
+
+Rilis ini mengubah template menjadi **Indonesian Academic LaTeX Framework**:
+modular, dengan perintah reusable, tema, class file, contoh dokumen, build
+sistem lengkap, dan dokumentasi (Markdown + situs MkDocs). Backward
+compatible dengan v1.x (alias metadata lama tetap tersedia).
 
 ### Ditambahkan
 - `docs/images/` berisi preview halaman (cover, daftar isi, bab, gambar, tabel, daftar pustaka).

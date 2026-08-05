@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Silakan kutip template ini jika digunakan dalam karya tulis Anda."
-title: "Template LaTeX Penulisan Ilmiah"
+title: "Indonesian Academic LaTeX Framework"
 authors:
   - family-names: "Prabawa"
     given-names: "Dewa Gede Benny Raharja"
@@ -8,11 +8,13 @@ authors:
     suffix: "M.Biomed, Sp.M"
 keywords:
   - "LaTeX"
-  - "template"
+  - "LuaLaTeX"
+  - "framework"
   - "penulisan ilmiah"
   - "proposal penelitian"
-  - "laporan penelitian"
+  - "tesis"
+  - "disertasi"
   - "biblatex"
 license: "MIT"
-date-released: "2026-08-04"
-version: "1.0.0"
+date-released: "2026-08-06"
+version: "2.0.0"
