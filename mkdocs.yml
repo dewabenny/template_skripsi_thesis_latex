@@ -1,0 +1,72 @@
+# ================================================================
+# MkDocs Configuration
+# Dokumentasi website: https://<user>.github.io/<repo>
+# Jalankan: mkdocs serve   (lokal)
+#           mkdocs build   (build statis)
+# ================================================================
+
+site_name: Indonesian Academic LaTeX Framework
+site_description: Kerangka penulisan ilmiah Bahasa Indonesia berbasis LuaLaTeX
+site_author: dr. Dewa Gede Benny Raharja Prabawa
+
+repo_url: https://github.com/username/indonesian-academic-latex-framework
+repo_name: indonesian-academic-latex-framework
+
+theme:
+  name: material
+  language: id
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mode terang
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Mode gelap
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.annotate
+
+nav:
+  - Beranda: index.md
+  - Pemasangan: installation.md
+  - Arsitektur: architecture.md
+  - Penggunaan:
+      - Metadata: metadata.md
+      - Pengaturan: settings.md
+      - Perintah: commands.md
+      - Tema: themes.md
+  - Bibliografi: bibliography.md
+  - Contoh: examples.md
+  - Bantuan:
+      - Troubleshooting: troubleshooting.md
+      - FAQ: faq.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - footnotes
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username/indonesian-academic-latex-framework
+
+copyright: Copyright &copy; 2026 dr. Dewa Gede Benny Raharja Prabawa

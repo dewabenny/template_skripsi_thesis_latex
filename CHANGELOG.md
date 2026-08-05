@@ -20,6 +20,8 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Target Makefile baru: `make pdf`, `make watch`, `make release`, `make lint`.
 - GitHub Actions: `.github/workflows/compile.yml` (compile + upload artifact) dan `.github/workflows/release.yml` (release otomatis saat tag `v*`).
 - Contoh di `examples/`: `proposal`, `thesis`, `dissertation`, `book` (memakai framework yang sama; build dengan `make examples`).
+- Dokumentasi website MkDocs Material: `mkdocs.yml`, `docs/requirements.txt`, halaman `commands.md` dan `examples.md`.
+- GitHub Actions `.github/workflows/docs.yml` untuk deploy situs dokumentasi ke GitHub Pages.
 
 ### Berubah
 - `main.tex` memanggil `\usetheme{classic}` (default).

@@ -9,8 +9,10 @@ berbasis LuaLaTeX.
 2. [Arsitektur](architecture.md) — pahami struktur dan prinsip framework.
 3. [Metadata](metadata.md) — isi identitas dokumen.
 4. [Pengaturan](settings.md) — sesuaikan tampilan.
-5. [Bibliografi](bibliography.md) — kelola sitasi & daftar pustaka.
-6. [Tema](themes.md) — pilih tampilan.
+5. [Perintah](commands.md) — kenali perintah reusable (`\makecover`, `\Figure`, dst.).
+6. [Bibliografi](bibliography.md) — kelola sitasi & daftar pustaka.
+7. [Tema](themes.md) — pilih tampilan (`classic`, `modern`, `minimal`, `book`).
+8. [Contoh](examples.md) — lihat dokumen contoh untuk proposal, tesis, disertasi, buku.
 
 ## Panduan Lain
 
