@@ -2,7 +2,8 @@
 
 Dokumen ini menjelaskan struktur bab, bagaimana penomoran bekerja, dan cara
 menyesuaikan susunan bab — termasuk **memisah Bab "Hasil dan Pembahasan"
-menjadi dua bab terpisah** (Hasil, lalu Pembahasan).
+menjadi dua bab terpisah** (Hasil, lalu Pembahasan), **menambah bab**,
+serta **menghapus bab atau section**.
 
 ## Struktur Bab
 
@@ -132,6 +133,96 @@ Hasilnya:
 - Daftar Pustaka
 
 Nomor bab, daftar isi, dan referensi silang diperbarui otomatis.
+
+## Menghapus Bab
+
+Untuk menghapus sebuah bab:
+
+1. **Hapus `\include`-nya di `main.tex`** — bab tidak lagi muncul, nomor bab
+   berikutnya otomatis mundur. Ini langkah paling penting.
+
+   ```latex
+   % sebelum: lima bab
+   \include{\frameworkRoot chapters/03_metode_penelitian}
+   \include{\frameworkRoot chapters/04_hasil_pembahasan}
+   \include{\frameworkRoot chapters/05_penutup}
+
+   % setelah: bab metode dihapus -> hasil menjadi BAB III
+   \include{\frameworkRoot chapters/04_hasil_pembahasan}
+   \include{\frameworkRoot chapters/05_penutup}
+   ```
+
+2. **Hapus (atau arsipkan) file bab** di `chapters/` agar tidak menumpuk:
+
+   ```bash
+   rm chapters/03_metode_penelitian.tex
+   ```
+
+   Bila ragu, pindahkan ke folder arsip alih-alih menghapus permanen:
+
+   ```bash
+   mkdir -p chapters/_arsip
+   mv chapters/03_metode_penelitian.tex chapters/_arsip/
+   ```
+
+3. **(Opsional) penomoran ulang nama file** agar urut:
+
+   ```bash
+   # mis. setelah menghapus bab 3:
+   mv chapters/04_hasil_pembahasan.tex chapters/03_hasil_pembahasan.tex
+   mv chapters/05_penutup.tex chapters/04_penutup.tex
+   mv chapters/06_daftar_pustaka.tex chapters/05_daftar_pustaka.tex
+   ```
+
+   Sesuaikan `\include` di `main.tex` dengan nama file yang baru.
+
+4. **Bangun ulang** dan periksa daftar isi serta nomor bab.
+
+> Peringatan: menghapus bab yang dirujuk file lain akan membuat referensi
+> silang (`\ref`) ke bab tersebut menjadi `??`. Periksa kembali sebelum build.
+
+## Menghapus Section
+
+Untuk menghapus sebuah section (atau subsection/subsubsection) di dalam bab,
+cukup hapus blok `\section{...}` (beserta isinya) dari file bab:
+
+```latex
+\chapter{Metode Penelitian}
+\section{Desain Penelitian}
+% isi section desain ...
+
+\section{Tempat dan Waktu Penelitian}   % <- hapus seluruh blok ini
+% isi ...
+
+\section{Populasi dan Sampel}           % <- tersisa; menjadi section berikutnya
+```
+
+Setelah dihapus, nomor section berikutnya otomatis mundur
+(2.3 → 2.2) dan daftar isi ikut diperbarui. Tidak ada perubahan lain yang
+diperlukan.
+
+### Menghapus sebagian isi (bukan seluruh section)
+
+Bila hanya ingin mengosongkan isi tetapi tetap menyisakan judul, kosongkan
+isinya atau beri komentar:
+
+```latex
+\section{Tempat dan Waktu Penelitian}
+% Isi dihapus sementara.
+```
+
+> Komentar `%` tidak tercetak di PDF, jadi Anda dapat menonaktifkan isi tanpa
+> menghapusnya.
+
+## Merujuk Section dari Bagian Lain
+
+Saat menghapus section, periksa apakah ada `\ref` ke label-nya. Bila ya,
+hapus kalimat yang merujuknya atau ganti dengan label section lain:
+
+```latex
+% menghapus section ini juga mengharuskan kalimat berikut diperbaiki
+Metode dijelaskan pada Bagian~\ref{sec:tempat}.   % label tidak ada lagi -> ??
+```
 
 ## Referensi Silang Antar Bab
 
