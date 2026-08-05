@@ -16,11 +16,12 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Perintah reusable `\Figure`, `\Table`, `\Equation`, `\Appendix`, `\Source` di `preamble/command.tex`.
 - Sistem tema di `themes/` (`classic`, `modern`, `minimal`, `book`) dengan perintah `\usetheme{...}` di `preamble/command.tex`.
 - Paket `xcolor` di `preamble/packages.tex` (dibutuhkan tema).
-- Dokumentasi Markdown di `docs/`: `index`, `installation`, `architecture`, `packages`, `settings`, `metadata`, `bibliography`, `themes`, `troubleshooting`, `faq`.
+- Dokumentasi Markdown di `docs/`: `index`, `installation`, `architecture`, `packages`, `settings`, `metadata`, `bibliography`, `themes`, `chapters`, `troubleshooting`, `faq`.
 - Target Makefile baru: `make pdf`, `make watch`, `make release`, `make lint`.
 - GitHub Actions: `.github/workflows/compile.yml` (compile + upload artifact) dan `.github/workflows/release.yml` (release otomatis saat tag `v*`).
 - Contoh di `examples/`: `proposal`, `thesis`, `dissertation`, `book` (memakai framework yang sama; build dengan `make examples`).
 - Dokumentasi website MkDocs Material: `mkdocs.yml`, `docs/requirements.txt`, halaman `commands.md` dan `examples.md`.
+- Halaman dokumentasi `docs/chapters.md` — panduan menyusun, menambah, dan memisah bab (mis. Hasil & Pembahasan terpisah).
 - GitHub Actions `.github/workflows/docs.yml` untuk deploy situs dokumentasi ke GitHub Pages.
 - Class file `academic-id.cls` — membungkus seluruh framework (metadata, packages, settings, command) sehingga cukup `\documentclass{academic-id}`.
 - Contoh `examples/class/` untuk pemakaian class file.

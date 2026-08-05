@@ -42,6 +42,7 @@ nav:
       - Metadata: metadata.md
       - Pengaturan: settings.md
       - Perintah: commands.md
+      - Bab: chapters.md
       - Tema: themes.md
       - Class File: class.md
   - Bibliografi: bibliography.md

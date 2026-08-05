@@ -10,9 +10,10 @@ berbasis LuaLaTeX.
 3. [Metadata](metadata.md) — isi identitas dokumen.
 4. [Pengaturan](settings.md) — sesuaikan tampilan.
 5. [Perintah](commands.md) — kenali perintah reusable (`\makecover`, `\Figure`, dst.).
-6. [Bibliografi](bibliography.md) — kelola sitasi & daftar pustaka.
-7. [Tema](themes.md) — pilih tampilan (`classic`, `modern`, `minimal`, `book`).
-8. [Contoh](examples.md) — lihat dokumen contoh untuk proposal, tesis, disertasi, buku.
+6. [Bab](chapters.md) — susun, tambah, dan pisah bab (mis. Hasil & Pembahasan terpisah).
+7. [Bibliografi](bibliography.md) — kelola sitasi & daftar pustaka.
+8. [Tema](themes.md) — pilih tampilan (`classic`, `modern`, `minimal`, `book`).
+9. [Contoh](examples.md) — lihat dokumen contoh untuk proposal, tesis, disertasi, buku.
 
 ## Panduan Lain
 
