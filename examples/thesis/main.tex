@@ -1,0 +1,78 @@
+% ================================================================
+% CONTOH — TESIS (MASTER'S THESIS)
+% Memakai framework dari root proyek. Dikompilasi dari ROOT:
+%   latexmk -lualatex -outdir=output examples/thesis/main.tex
+% ================================================================
+
+\documentclass[12pt]{report}
+
+% Metadata contoh
+\newcommand{\docTitle}{Perbandingan Efektivitas Terapi Medikamen pada Glaukoma Sudut Terbuka}
+\newcommand{\docSubtitle}{Tesis}
+\newcommand{\docAuthor}{dr. Nama Mahasiswa}
+\newcommand{\docSupervisor}{
+    \begin{tabular}{c}
+        Prof. dr. Pembimbing Satu, Sp.M(K) \\
+        dr. Pembimbing Dua, Sp.M \\
+    \end{tabular}
+}
+\newcommand{\docProgram}{PROGRAM STUDI ILMU PENYAKIT MATA}
+\newcommand{\docDepartment}{DEPARTEMEN ILMU PENYAKIT MATA}
+\newcommand{\docFaculty}{FAKULTAS KEDOKTERAN}
+\newcommand{\docHospital}{RUMAH SAKIT UMUM PUSAT CONTOH}
+\newcommand{\docUniversity}{UNIVERSITAS CONTOH}
+\newcommand{\docLocation}{DENPASAR}
+\newcommand{\docYear}{2026}
+\newcommand{\docLogo}{figures/logo_institusi.png}
+\newcommand{\docSubject}{Tesis}
+\newcommand{\docKeywords}{Glaukoma, Sudut Terbuka, Efektivitas}
+
+\input{preamble/packages}
+\input{preamble/settings}
+\input{preamble/command}
+
+\usetheme{modern}
+
+\begin{document}
+
+\makecover[][Tesis]
+
+\input{frontmatter/abstract}
+
+\chapter{Pendahuluan}
+\section{Latar Belakang}
+Glaukoma merupakan penyebab utama kebutaan ireversibel di dunia.\supercite{negrelGlobalImpactEye1998a} Tata laksana glaukoma sudut terbuka bertujuan menurunkan tekanan intraokular.\supercite{razeghinejadPathophysiologyManagementGlaucoma2020}
+
+\section{Tujuan Penelitian}
+Membandingkan efektivitas dua terapi medikamen pada pasien glaukoma sudut terbuka.
+
+\chapter{Metode Penelitian}
+\section{Desain}
+Studi eksperimental dengan dua kelompok perlakuan.
+
+\section{Definisi Operasional}
+\Table{tab:variabel}{
+  \begin{tabular}{ll}
+  \toprule
+  Variabel & Definisi \\
+  \midrule
+  Tekanan intraokular & mmHg \\
+  Efektivitas & Penurunan TIO \(\geq 20\%\) \\
+  \bottomrule
+  \end{tabular}
+}{Definisi operasional variabel.}
+
+\chapter{Hasil dan Pembahasan}
+\section{Hasil}
+Hasil analisis akan disajikan pada bagian ini, didukung tabel dan gambar.
+
+\section{Pembahasan}
+Temuan akan dibandingkan dengan literatur terkini.
+
+\chapter{Penutup}
+\section{Kesimpulan}
+Kesimpulan dirumuskan berdasarkan tujuan dan hasil penelitian.
+
+\printbibliography[title={Daftar Pustaka}]
+
+\end{document}

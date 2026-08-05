@@ -19,6 +19,7 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Dokumentasi Markdown di `docs/`: `index`, `installation`, `architecture`, `packages`, `settings`, `metadata`, `bibliography`, `themes`, `troubleshooting`, `faq`.
 - Target Makefile baru: `make pdf`, `make watch`, `make release`, `make lint`.
 - GitHub Actions: `.github/workflows/compile.yml` (compile + upload artifact) dan `.github/workflows/release.yml` (release otomatis saat tag `v*`).
+- Contoh di `examples/`: `proposal`, `thesis`, `dissertation`, `book` (memakai framework yang sama; build dengan `make examples`).
 
 ### Berubah
 - `main.tex` memanggil `\usetheme{classic}` (default).

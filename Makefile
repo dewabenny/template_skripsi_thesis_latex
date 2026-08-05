@@ -16,7 +16,7 @@ OUTDIR     = output
 LATEXMK    = latexmk
 LUALATEX   = lualatex
 
-.PHONY: all pdf watch clean cleanall release lint
+.PHONY: all pdf watch clean cleanall release lint examples
 
 all: pdf
 
@@ -45,3 +45,14 @@ lint:
 	else \
 		echo "OK: tidak ada error kompilasi."; \
 	fi
+
+# Build semua contoh di examples/ (masing-masing ke output/<nama>-example.pdf)
+EXAMPLES = proposal thesis dissertation book
+
+examples:
+	@for ex in $(EXAMPLES); do \
+		echo "== Membangun contoh: $$ex =="; \
+		$(LATEXMK) -lualatex -outdir=$(OUTDIR) -jobname=$$ex-example \
+		  examples/$$ex/main.tex || exit 1; \
+	done
+	@echo "Semua contoh berhasil dibangun di $(OUTDIR)/*-example.pdf"

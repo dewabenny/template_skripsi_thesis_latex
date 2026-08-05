@@ -1,0 +1,84 @@
+% ================================================================
+% CONTOH — PROPOSAL PENELITIAN
+% Memakai framework dari root proyek (preamble/ bersama).
+% Kompilasi dari ROOT proyek:
+%   latexmk -lualatex -outdir=output examples/proposal/main.tex
+% ================================================================
+
+\documentclass[12pt]{report}
+
+% Metadata contoh (menggantikan metadata root)
+\newcommand{\docTitle}{Karakteristik Pasien Glaukoma Traumatik di Rumah Sakit Contoh}
+\newcommand{\docSubtitle}{Proposal Penelitian}
+\newcommand{\docAuthor}{dr. Nama Mahasiswa}
+\newcommand{\docSupervisor}{
+    \begin{tabular}{c}
+        dr. Pembimbing Satu, Sp.M \\
+        dr. Pembimbing Dua, Sp.M \\
+    \end{tabular}
+}
+\newcommand{\docProgram}{PROGRAM STUDI ILMU PENYAKIT MATA}
+\newcommand{\docDepartment}{DEPARTEMEN ILMU PENYAKIT MATA}
+\newcommand{\docFaculty}{FAKULTAS KEDOKTERAN}
+\newcommand{\docHospital}{RUMAH SAKIT UMUM PUSAT CONTOH}
+\newcommand{\docUniversity}{UNIVERSITAS CONTOH}
+\newcommand{\docLocation}{DENPASAR}
+\newcommand{\docYear}{2026}
+\newcommand{\docLogo}{figures/logo_institusi.png}
+\newcommand{\docSubject}{Proposal Penelitian}
+\newcommand{\docKeywords}{Glaukoma, Trauma, Karakteristik}
+
+\input{preamble/packages}
+\input{preamble/settings}
+\input{preamble/command}
+
+\usetheme{classic}
+
+\begin{document}
+
+\makecover[][Proposal Penelitian]
+
+\input{frontmatter/abstract}
+
+\chapter{Pendahuluan}
+\section{Latar Belakang}
+Trauma okuli merupakan penyebab utama kebutaan unilateral di seluruh
+dunia.\supercite{negrelGlobalImpactEye1998a} Glaukoma traumatik merupakan
+salah satu komplikasi penting pasca trauma.\supercite{osmanGlaucomaOpenGlobe2015}
+
+\section{Tujuan Penelitian}
+Mengetahui karakteristik klinis pasien glaukoma traumatik.
+
+\chapter{Metode Penelitian}
+\section{Desain}
+Studi deskriptif retrospektif dengan data rekam medis.
+
+\section{Analisis Data}
+Data dianalisis secara deskriptif dan disajikan dalam bentuk distribusi
+frekuensi serta tabel.
+
+\Table{tab:karakteristik}{
+  \begin{tabular}{ll}
+  \toprule
+  Variabel & Keterangan \\
+  \midrule
+  Usia & Rata-rata (SD) \\
+  Jenis kelamin & Laki-laki/perempuan \\
+  \bottomrule
+  \end{tabular}
+}{Definisi operasional variabel penelitian.}
+
+\chapter{Hasil dan Pembahasan}
+\section{Hasil}
+Hasil penelitian akan disajikan pada bagian ini.
+
+\section{Pembahasan}
+Pembahasan akan mengaitkan temuan dengan penelitian sebelumnya.
+
+\chapter{Penutup}
+\section{Kesimpulan}
+Kesimpulan akan dirumuskan berdasarkan hasil penelitian.
+
+\printbibliography[title={Daftar Pustaka}]
+
+\end{document}

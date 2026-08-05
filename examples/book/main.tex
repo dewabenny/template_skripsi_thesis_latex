@@ -1,0 +1,70 @@
+% ================================================================
+% CONTOH — BUKU AKADEMIK (ACADEMIC BOOK)
+% Memakai framework dari root proyek. Dikompilasi dari ROOT:
+%   latexmk -lualatex -outdir=output examples/book/main.tex
+% ================================================================
+
+\documentclass[12pt]{report}
+
+% Metadata contoh
+\newcommand{\docTitle}{Glaukoma: Dari Dasar Hingga Tata Laksana Lanjut}
+\newcommand{\docSubtitle}{Buku Ajar}
+\newcommand{\docAuthor}{Prof. dr. Nama Penulis, Sp.M(K), Ph.D}
+\newcommand{\docSupervisor}{}
+\newcommand{\docProgram}{DEPARTEMEN ILMU PENYAKIT MATA}
+\newcommand{\docDepartment}{}
+\newcommand{\docFaculty}{}
+\newcommand{\docHospital}{}
+\newcommand{\docUniversity}{UNIVERSITAS CONTOH}
+\newcommand{\docLocation}{DENPASAR}
+\newcommand{\docYear}{2026}
+\newcommand{\docLogo}{figures/logo_institusi.png}
+\newcommand{\docSubject}{Buku Ajar}
+\newcommand{\docKeywords}{Glaukoma, Oftalmologi}
+
+\input{preamble/packages}
+\input{preamble/settings}
+\input{preamble/command}
+
+\usetheme{book}
+
+\begin{document}
+
+\makecover[][Buku Ajar]
+
+\input{frontmatter/abstract}
+
+\chapter{Anatomi dan Fisiologi Humor Akuos}
+\section{Produksi Humor Akuos}
+Humor akuos diproduksi oleh epitel badan siliar dan mengalir melalui
+trabecular meshwork.\supercite{razeghinejadPathophysiologyManagementGlaucoma2020}
+
+\section{Gangguan Aliran}
+Gangguan aliran humor akuos menyebabkan peningkatan tekanan intraokular.
+
+\chapter{Klasifikasi Glaukoma}
+\section{Glaukoma Sudut Terbuka}
+Glaukoma sudut terbuka merupakan tipe yang paling umum.
+
+\section{Glaukoma Sudut Tertutup}
+Glaukoma sudut tertutup merupakan kegawatdaruratan oftalmologi.\supercite{osmanGlaucomaOpenGlobe2015}
+
+\chapter{Tata Laksana}
+\section{Medikamen}
+\Table{tab:terapi}{
+  \begin{tabular}{ll}
+  \toprule
+  Golongan & Contoh Obat \\
+  \midrule
+  Analog prostaglandin & Latanoprost \\
+  Beta blocker & Timolol \\
+  \bottomrule
+  \end{tabular}
+}{Golongan terapi medikamen glaukoma.}
+
+\section{Pembedahan}
+Pembedahan dipertimbangkan bila terapi medikamen tidak adekuat.
+
+\printbibliography[title={Daftar Pustaka}]
+
+\end{document}

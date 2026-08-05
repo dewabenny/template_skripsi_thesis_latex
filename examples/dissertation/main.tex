@@ -1,0 +1,69 @@
+% ================================================================
+% CONTOH — DISERTASI (DISSERTATION)
+% Memakai framework dari root proyek. Dikompilasi dari ROOT:
+%   latexmk -lualatex -outdir=output examples/dissertation/main.tex
+% ================================================================
+
+\documentclass[12pt]{report}
+
+% Metadata contoh
+\newcommand{\docTitle}{Pengembangan Model Prediksi Progresi Glaukoma pada Pasien Pasca Traksi Okuli}
+\newcommand{\docSubtitle}{Disertasi}
+\newcommand{\docAuthor}{dr. Nama Doktorandus}
+\newcommand{\docSupervisor}{
+    \begin{tabular}{c}
+        Prof. dr. Promotor Satu, Sp.M(K), Ph.D \\
+        Prof. dr. Promotor Dua, Sp.M(K) \\
+    \end{tabular}
+}
+\newcommand{\docProgram}{PROGRAM STUDI ILMU PENYAKIT MATA}
+\newcommand{\docDepartment}{DEPARTEMEN ILMU PENYAKIT MATA}
+\newcommand{\docFaculty}{FAKULTAS KEDOKTERAN}
+\newcommand{\docHospital}{RUMAH SAKIT UMUM PUSAT CONTOH}
+\newcommand{\docUniversity}{UNIVERSITAS CONTOH}
+\newcommand{\docLocation}{DENPASAR}
+\newcommand{\docYear}{2026}
+\newcommand{\docLogo}{figures/logo_institusi.png}
+\newcommand{\docSubject}{Disertasi}
+\newcommand{\docKeywords}{Glaukoma, Prediksi, Model, Trauma}
+
+\input{preamble/packages}
+\input{preamble/settings}
+\input{preamble/command}
+
+\usetheme{book}
+
+\begin{document}
+
+\makecover[][Disertasi]
+
+\input{frontmatter/abstract}
+
+\chapter{Pendahuluan}
+\section{Latar Belakang}
+Model prediksi memungkinkan stratifikasi risiko progresi glaukoma.\supercite{razeghinejadPathophysiologyManagementGlaucoma2020} Penelitian ini mengembangkan model berbasis data klinis.
+
+\section{Rumusan Masalah}
+Bagaimana akurasi model prediksi progresi glaukoma pasca trauma okuli?
+
+\chapter{Metode Penelitian}
+\section{Desain}
+Studi kohort retrospektif dengan model prediksi.
+
+\section{Analisis}
+\Equation{eq:model}{P(progresi) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2)}}}
+
+\chapter{Hasil dan Pembahasan}
+\section{Hasil}
+Hasil pengembangan dan validasi model disajikan pada bagian ini.
+
+\section{Pembahasan}
+Perbandingan dengan model yang telah ada dijelaskan di sini.
+
+\chapter{Kesimpulan dan Saran}
+\section{Kesimpulan}
+Kesimpulan penelitian dirumuskan di bagian ini.
+
+\printbibliography[title={Daftar Pustaka}]
+
+\end{document}

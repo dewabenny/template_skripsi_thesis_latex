@@ -95,11 +95,43 @@ lualatex -output-directory=output main.tex
 ```bash
 make          # sama dengan make pdf
 make pdf      # build dengan latexmk
+make watch    # build otomatis saat file berubah
+make examples # build semua contoh di examples/
 make clean    # hapus artefak build (PDF tetap)
 make cleanall # hapus artefak dan folder output/
+make release  # build + salin PDF ke root (main.pdf)
+make lint     # build + cek log untuk error
 ```
 
 > ⚠️ Gunakan **LuaLaTeX** (bukan pdfLaTeX) karena dokumen memakai `fontspec`.
+
+## Contoh (Examples)
+
+Folder `examples/` berisi contoh dokumen siap kompilasi untuk berbagai jenis
+karya ilmiah. Semuanya memakai framework yang sama (tidak menduplikasi
+preamble):
+
+| Contoh | Jenis | Tema |
+|--------|-------|------|
+| `examples/proposal/` | Proposal penelitian | classic |
+| `examples/thesis/` | Tesis (master's thesis) | modern |
+| `examples/dissertation/` | Disertasi | book |
+| `examples/book/` | Buku akademik | book |
+
+Build semua contoh:
+
+```bash
+make examples   # output/proposal-example.pdf, dsb.
+```
+
+Atau satu contoh:
+
+```bash
+latexmk -lualatex -outdir=output examples/thesis/main.tex
+```
+
+Jadikan salah satu contoh sebagai titik awal dokumen Anda: salin foldernya,
+lalu isi `metadata`, bab, dan referensi.
 
 ## Struktur Proyek
 
