@@ -21,14 +21,15 @@ yang berisi:
 Contoh entri di `references.bib`:
 
 ```bibtex
-@article{negrelGlobalImpactEye1998a,
-  author    = {Négrel, A. D. and Thylefors, B.},
-  title     = {The Global Impact of Eye Injuries},
-  journal   = {Ophthalmic Epidemiology},
-  year      = {1998},
-  volume    = {5},
-  number    = {3},
-  pages     = {143--169}
+@article{santosoKarakteristikGlaukomaTraumatik2020,
+  author        = {Santoso, Budi and Wijaya, Andi},
+  title         = {Karakteristik Klinis Pasien Glaukoma Traumatik di Rumah Sakit Pusat Contoh},
+  journaltitle  = {Jurnal Oftalmologi Indonesia},
+  date          = {2020},
+  volume        = {16},
+  number        = {2},
+  pages         = {85--92},
+  doi           = {10.1234/joi.2020.16.2.85}
 }
 ```
 
