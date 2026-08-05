@@ -27,6 +27,9 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 
 ### Berubah
 - `main.tex` memanggil `\usetheme{classic}` (default).
+- Seluruh `\input` internal framework memakai `\frameworkRoot` (kosong di root, `../../` di contoh) sehingga framework dapat dikompilasi dari direktori mana pun.
+- `metadata.tex`: nilai `\docLogo` dan `\docBibliography` tanpa spasi/baris (menghindari spasi tak diinginkan pada path).
+- Contoh non-class (`proposal`, `thesis`, `dissertation`, `book`) dikompilasi dari foldernya masing-masing; contoh `class` dikompilasi dari root.
 - Makefile lama diperluas mendukung latexmk penuh (`-pvc`, `-c`, `-C`) dan validasi log.
 - README merujuk ke `docs/` untuk dokumentasi detail.
 - `make examples` mencakup contoh `class`.

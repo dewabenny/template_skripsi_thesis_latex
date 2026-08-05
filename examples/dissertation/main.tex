@@ -6,6 +6,9 @@
 
 \documentclass[12pt]{report}
 
+% Framework berada dua level di atas folder contoh ini.
+\newcommand{\frameworkRoot}{../../}
+
 % Metadata contoh
 \newcommand{\docTitle}{Pengembangan Model Prediksi Progresi Glaukoma pada Pasien Pasca Traksi Okuli}
 \newcommand{\docSubtitle}{Disertasi}
@@ -23,13 +26,14 @@
 \newcommand{\docUniversity}{UNIVERSITAS CONTOH}
 \newcommand{\docLocation}{DENPASAR}
 \newcommand{\docYear}{2026}
-\newcommand{\docLogo}{figures/logo_institusi.png}
+\newcommand{\docLogo}{../../figures/logo_institusi.png}
 \newcommand{\docSubject}{Disertasi}
 \newcommand{\docKeywords}{Glaukoma, Prediksi, Model, Trauma}
+\newcommand{\docBibliography}{../../bibliography/references.bib}
 
-\input{preamble/packages}
-\input{preamble/settings}
-\input{preamble/command}
+\input{\frameworkRoot preamble/packages}
+\input{\frameworkRoot preamble/settings}
+\input{\frameworkRoot preamble/command}
 
 \usetheme{book}
 
@@ -37,7 +41,7 @@
 
 \makecover[][Disertasi]
 
-\input{frontmatter/abstract}
+\input{\frameworkRoot frontmatter/abstract}
 
 \chapter{Pendahuluan}
 \section{Latar Belakang}

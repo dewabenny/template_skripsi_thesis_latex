@@ -22,6 +22,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{academic-id}[2026/08/06 v0.2.0 Indonesian Academic LaTeX Framework]
 
+% Prefix path menuju akar framework. Kosong bila dokumen di root;
+% untuk proyek turunan (mis. examples/<jenis>/) gunakan "../../".
+\newcommand{\frameworkRoot}{}
+
 % Teruskan opsi ke kelas dasar (report), kecuali ukuran font default.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
@@ -39,9 +43,9 @@
 %   metadata -> packages -> settings -> command
 % ================================================================
 
-\input{preamble/metadata}
-\input{preamble/packages}
-\input{preamble/settings}
-\input{preamble/command}
+\input{\frameworkRoot preamble/metadata}
+\input{\frameworkRoot preamble/packages}
+\input{\frameworkRoot preamble/settings}
+\input{\frameworkRoot preamble/command}
 
 \endinput

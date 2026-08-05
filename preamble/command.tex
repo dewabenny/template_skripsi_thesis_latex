@@ -10,7 +10,7 @@
 %% USETHEME
 %% Pilih tema tampilan dokumen.
 %%
-%% Pemakaian (letakkan di main.tex setelah \input preamble):
+%% Pemakaian (letakkan di main.tex setelah \import preamble):
 %%   \usetheme{classic}   % bawaan: hitam/netral
 %%   \usetheme{modern}    % aksen biru
 %%   \usetheme{minimal}   % ringkas
@@ -20,9 +20,8 @@
 %% ================================================================
 
 \NewDocumentCommand{\usetheme}{m}{%
-  \input{themes/#1}%
+  \input{\frameworkRoot themes/#1}%
 }
-
 % ================================================================
 %% FIGURE
 %% Sisipkan gambar dengan caption dan label dalam satu perintah.

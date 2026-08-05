@@ -79,6 +79,19 @@ melalui `\usetheme{name}` di `main.tex`.
   `\docFaculty`, `\docUniversity`, `\docSupervisor`, `\docLogo`, `\docYear`, dst.
 - Jangan hardcode nilai metadata di luar `metadata.tex`.
 
+## Path Framework (`\frameworkRoot`)
+
+Semua `\input` internal framework diawali `\frameworkRoot` — makro yang
+didefinisikan oleh entry point dokumen:
+
+| Entry point | Nilai `\frameworkRoot` |
+|-------------|------------------------|
+| `main.tex` (root) | kosong |
+| `examples/<jenis>/main.tex` | `../../` |
+
+Dengan mekanisme ini, framework dapat dikompilasi dari direktori mana pun
+(root maupun folder contoh) tanpa mengubah path di dalam modul.
+
 ## Mengapa Bukan Satu File Besar?
 
 Satu file besar (monolith) terasa cepat saat awal, tetapi:

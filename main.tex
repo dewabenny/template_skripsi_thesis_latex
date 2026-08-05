@@ -1,9 +1,18 @@
 \documentclass[12pt]{report}
 
-\input{preamble/metadata}
-\input{preamble/packages}
-\input{preamble/settings}
-\input{preamble/command}
+% ================================================================
+% FRAMEWORK ROOT
+% Prefix path menuju akar framework. Kosong bila dokumen berada
+% di root; untuk contoh (examples/<jenis>/main.tex) gunakan "../../".
+% Seluruh \input internal framework memakai \frameworkRoot.
+% ================================================================
+
+\newcommand{\frameworkRoot}{}
+
+\input{\frameworkRoot preamble/metadata}
+\input{\frameworkRoot preamble/packages}
+\input{\frameworkRoot preamble/settings}
+\input{\frameworkRoot preamble/command}
 
 % ================================================================
 % THEME
@@ -24,15 +33,15 @@
 
 \begin{document}
 
-\input{frontmatter/cover}
-\input{frontmatter/abstract}
-\input{frontmatter/toctables}
+\input{\frameworkRoot frontmatter/cover}
+\input{\frameworkRoot frontmatter/abstract}
+\input{\frameworkRoot frontmatter/toctables}
 
-\include{chapters/01_pendahuluan}
-\include{chapters/02_tinjauan_pustaka}
-\include{chapters/03_metode_penelitian}
-\include{chapters/04_hasil_pembahasan}
-\include{chapters/05_penutup}
-\include{chapters/06_daftar_pustaka}
+\include{\frameworkRoot chapters/01_pendahuluan}
+\include{\frameworkRoot chapters/02_tinjauan_pustaka}
+\include{\frameworkRoot chapters/03_metode_penelitian}
+\include{\frameworkRoot chapters/04_hasil_pembahasan}
+\include{\frameworkRoot chapters/05_penutup}
+\include{\frameworkRoot chapters/06_daftar_pustaka}
 
 \end{document}

@@ -125,14 +125,23 @@ Build semua contoh:
 make examples   # output/proposal-example.pdf, dsb.
 ```
 
-Atau satu contoh:
+Atau satu contoh — **dari dalam foldernya** (path framework = `../../`):
 
 ```bash
-latexmk -lualatex -outdir=output examples/thesis/main.tex
+cd examples/thesis
+latexmk -lualatex -outdir=output main.tex
+```
+
+Khusus contoh `examples/class/` (memakai `\documentclass{academic-id}`),
+kompilasi dilakukan **dari root** agar class file ditemukan:
+
+```bash
+latexmk -lualatex -outdir=output examples/class/main.tex
 ```
 
 Jadikan salah satu contoh sebagai titik awal dokumen Anda: salin foldernya,
-lalu isi `metadata`, bab, dan referensi.
+lalu isi `metadata`, bab, dan referensi. Contoh non-class mandiri di
+foldernya dan dapat dibuka langsung dengan VS Code (LaTeX Workshop).
 
 ## Class File (`academic-id.cls`)
 
@@ -166,7 +175,7 @@ settings, command) dimuat otomatis:
 ├── preamble/                 # Konfigurasi & perintah (di-load oleh main.tex)
 │   ├── metadata.tex          # Identitas dokumen (satu-satunya sumber metadata)
 │   ├── packages.tex          # Daftar paket LaTeX + biblatex + hyperref
-│   ├── settings.tex          # Format/spacing/penomoran/caption/toc
+│   ├── settings.tex          # Import modul setting/ (spacing, chapter, section, dst.)
 │   └── command.tex           # Perintah (command) khusus yang dapat dipakai ulang
 ├── frontmatter/              # Bagian awal dokumen
 │   ├── cover.tex             # Halaman sampul (titlepage)

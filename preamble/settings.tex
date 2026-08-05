@@ -2,14 +2,18 @@
 % SETTINGS
 % Induk modul pengaturan tampilan. Setiap modul memiliki satu
 % tanggung jawab. Tambahkan modul baru dengan meng-input-nya di sini.
+%
+% Path modul diawali \frameworkRoot — makro yang didefinisikan oleh
+% entry point (main.tex: kosong; contoh: ../../). Dengan ini framework
+% dapat dikompilasi dari direktori mana pun.
 % ================================================================
 
-\input{preamble/setting/spacing}
-\input{preamble/setting/typography}
-\input{preamble/setting/chapter}
-\input{preamble/setting/section}
-\input{preamble/setting/numbering}
-\input{preamble/setting/caption}
-\input{preamble/setting/toc}
-\input{preamble/setting/bibliography}
-\input{preamble/setting/hyperlink}
+\input{\frameworkRoot preamble/setting/spacing}
+\input{\frameworkRoot preamble/setting/typography}
+\input{\frameworkRoot preamble/setting/chapter}
+\input{\frameworkRoot preamble/setting/section}
+\input{\frameworkRoot preamble/setting/numbering}
+\input{\frameworkRoot preamble/setting/caption}
+\input{\frameworkRoot preamble/setting/toc}
+\input{\frameworkRoot preamble/setting/bibliography}
+\input{\frameworkRoot preamble/setting/hyperlink}

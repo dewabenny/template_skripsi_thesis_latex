@@ -6,6 +6,9 @@
 
 \documentclass[12pt]{report}
 
+% Framework berada dua level di atas folder contoh ini.
+\newcommand{\frameworkRoot}{../../}
+
 % Metadata contoh
 \newcommand{\docTitle}{Perbandingan Efektivitas Terapi Medikamen pada Glaukoma Sudut Terbuka}
 \newcommand{\docSubtitle}{Tesis}
@@ -23,13 +26,14 @@
 \newcommand{\docUniversity}{UNIVERSITAS CONTOH}
 \newcommand{\docLocation}{DENPASAR}
 \newcommand{\docYear}{2026}
-\newcommand{\docLogo}{figures/logo_institusi.png}
+\newcommand{\docLogo}{../../figures/logo_institusi.png}
 \newcommand{\docSubject}{Tesis}
 \newcommand{\docKeywords}{Glaukoma, Sudut Terbuka, Efektivitas}
+\newcommand{\docBibliography}{../../bibliography/references.bib}
 
-\input{preamble/packages}
-\input{preamble/settings}
-\input{preamble/command}
+\input{\frameworkRoot preamble/packages}
+\input{\frameworkRoot preamble/settings}
+\input{\frameworkRoot preamble/command}
 
 \usetheme{modern}
 
@@ -37,7 +41,7 @@
 
 \makecover[][Tesis]
 
-\input{frontmatter/abstract}
+\input{\frameworkRoot frontmatter/abstract}
 
 \chapter{Pendahuluan}
 \section{Latar Belakang}

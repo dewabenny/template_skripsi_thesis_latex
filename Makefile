@@ -47,12 +47,21 @@ lint:
 	fi
 
 # Build semua contoh di examples/ (masing-masing ke output/<nama>-example.pdf)
-EXAMPLES = class proposal thesis dissertation book
+# - Contoh non-class (proposal/thesis/dissertation/book) mandiri di foldernya:
+#   dikompilasi dari dalam foldernya (path framework = ../../).
+# - Contoh class (academic-id.cls) dikompilasi dari ROOT agar class ditemukan.
+EXAMPLES_NONCLASS = proposal thesis dissertation book
+EXAMPLE_CLASS = class
 
 examples:
-	@for ex in $(EXAMPLES); do \
+	@for ex in $(EXAMPLES_NONCLASS); do \
 		echo "== Membangun contoh: $$ex =="; \
-		$(LATEXMK) -lualatex -outdir=$(OUTDIR) -jobname=$$ex-example \
-		  examples/$$ex/main.tex || exit 1; \
+		cd examples/$$ex && \
+		$(LATEXMK) -lualatex -outdir=../../$(OUTDIR) -jobname=$$ex-example \
+		  main.tex || exit 1; \
+		cd ../..; \
 	done
+	@echo "== Membangun contoh: class =="
+	@$(LATEXMK) -lualatex -outdir=$(OUTDIR) -jobname=$(EXAMPLE_CLASS)-example \
+	  examples/$(EXAMPLE_CLASS)/main.tex
 	@echo "Semua contoh berhasil dibangun di $(OUTDIR)/*-example.pdf"
