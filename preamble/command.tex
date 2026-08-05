@@ -7,6 +7,99 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 % ================================================================
+%% FIGURE
+%% Sisipkan gambar dengan caption dan label dalam satu perintah.
+%%
+%% Pemakaian:
+%%   \Figure{figures/logo_institusi.png}{Keterangan gambar.}{fig:logo}
+%%
+%% Argumen: [1] file gambar, [2] caption, [3] label.
+%% ================================================================
+
+\NewDocumentCommand{\Figure}{m m m}{
+  \begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\linewidth]{#1}
+  \caption{#2}
+  \label{#3}
+  \end{figure}
+}
+
+% ================================================================
+%% TABLE
+%% Sisipkan tabel dengan caption dan label dalam satu perintah.
+%% Isi tabel ditulis dalam argumen kedua (gaya booktabs).
+%%
+%% Pemakaian:
+%%   \Table{tab:contoh}{%
+%%     \begin{tabular}{ll}
+%%       \toprule
+%%       A & B \\
+%%       \bottomrule
+%%     \end{tabular}
+%%   }{Keterangan tabel.}
+%%
+%% Argumen: [1] label, [2] isi tabel, [3] caption.
+%% ================================================================
+
+\NewDocumentCommand{\Table}{m m m}{
+  \begin{table}[ht]
+  \centering
+  #2
+  \caption{#3}
+  \label{#1}
+  \end{table}
+}
+
+% ================================================================
+%% EQUATION
+%% Sisipkan persamaan bernomor dengan label.
+%%
+%% Pemakaian:
+%%   \Equation{eq:contoh}{E = mc^2}
+%%
+%% Argumen: [1] label, [2] isi persamaan.
+%% ================================================================
+
+\NewDocumentCommand{\Equation}{m m}{
+  \begin{equation}
+  #2
+  \label{#1}
+  \end{equation}
+}
+
+% ================================================================
+%% APPENDIX
+%% Mulai bagian lampiran. Membaca label optional untuk penamaan.
+%%
+%% Pemakaian:
+%%   \Appendix{Lampiran}        % bagian lampiran, judul "Lampiran"
+%%   \Appendix*                 % lampiran tanpa nomor bab baru
+%% ================================================================
+
+\NewDocumentCommand{\Appendix}{s m}{
+  \IfBooleanTF{#1}
+    {\chapter*{#2}}
+    {\chapter{#2}}
+}
+
+% ================================================================
+%% SOURCE
+%% Catatan sumber untuk gambar/tabel (ditempatkan setelah lingkungan).
+%%
+%% Pemakaian:
+%%   \Figure{figures/x.png}{Keterangan.}{fig:x}
+%%   \Source{Diadaptasi dari: Author (2020).}
+%% ================================================================
+
+\NewDocumentCommand{\Source}{m}{
+  \par\smallskip
+  \begin{flushleft}
+  \small #1
+  \end{flushleft}
+}
+
+% ================================================================
 %% MAKECOVER
 %% Halaman sampul (titlepage) yang dapat dipakai ulang.
 %% Membaca seluruh identitas dari metadata.tex.

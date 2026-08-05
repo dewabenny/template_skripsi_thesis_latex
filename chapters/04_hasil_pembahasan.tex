@@ -14,12 +14,7 @@
 
 % Contoh gambar (ganti placeholder berikut dengan gambar Anda;
 % simpan berkas gambar di folder figures/):
-\begin{figure}[ht]
-\centering
-\fbox{\rule{0pt}{3cm}\rule{0.9\linewidth}{0pt}}
-\caption{Tulis keterangan gambar di sini.}
-\label{fig:contoh}
-\end{figure}
+\Figure{figures/logo_institusi.png}{Contoh gambar menggunakan perintah \texttt{\textbackslash Figure}.}{fig:contoh}
 
 % Alternatif bila gambar sudah tersedia:
 % \begin{figure}[ht]
@@ -30,19 +25,16 @@
 % \end{figure}
 
 % Contoh tabel:
-\begin{table}[ht]
-\centering
-\begin{tabular}{ll}
-\toprule
-Variabel & Keterangan \\
-\midrule
-A & Contoh data A \\
-B & Contoh data B \\
-\bottomrule
-\end{tabular}
-\caption{Tulis keterangan tabel di sini.}
-\label{tab:contoh}
-\end{table}
+\Table{tab:contoh}{
+  \begin{tabular}{ll}
+  \toprule
+  Variabel & Keterangan \\
+  \midrule
+  A & Contoh data A \\
+  B & Contoh data B \\
+  \bottomrule
+  \end{tabular}
+}{Contoh tabel menggunakan perintah \texttt{\textbackslash Table}.}
 
 \section{Pembahasan}
 
