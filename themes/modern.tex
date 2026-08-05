@@ -1,0 +1,37 @@
+% ================================================================
+% THEME — MODERN
+% Tampilan kontemporer dengan aksen warna biru:
+% - tautan berwarna biru
+% - judul bab dengan aksen biru
+% ================================================================
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=blue!70!black,
+  urlcolor=blue!70!black
+}
+
+\titleformat{\chapter}[display]
+{\centering\bfseries\color{blue!60!black}\fontsize{16pt}{20pt}\selectfont}
+{BAB~\thechapter}
+{0.5em}
+{\MakeUppercase}
+
+\titleformat{\section}
+{\bfseries\color{blue!60!black}\fontsize{12pt}{18pt}\selectfont}
+{\thesection}
+{1em}
+{}
+
+\titleformat{\subsection}
+{\bfseries\color{blue!60!black}\fontsize{12pt}{18pt}\selectfont}
+{\thesubsection}
+{1em}
+{}
+
+\titleformat{\subsubsection}
+{\bfseries\color{blue!60!black}\fontsize{12pt}{18pt}\selectfont}
+{\thesubsubsection}
+{1em}
+{}

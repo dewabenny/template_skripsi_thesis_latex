@@ -1,0 +1,37 @@
+% ================================================================
+% THEME — BOOK
+% Tampilan ala buku akademik:
+% - judul bab tanpa kata "BAB" (langsung nomor Romawi)
+% - tautan hitam netral
+% ================================================================
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+}
+
+\titleformat{\chapter}[display]
+{\centering\bfseries\fontsize{16pt}{20pt}\selectfont}
+{\thechapter}
+{0.5em}
+{\MakeUppercase}
+
+\titleformat{\section}
+{\bfseries\fontsize{12pt}{18pt}\selectfont}
+{\thesection}
+{1em}
+{}
+
+\titleformat{\subsection}
+{\bfseries\fontsize{12pt}{18pt}\selectfont}
+{\thesubsection}
+{1em}
+{}
+
+\titleformat{\subsubsection}
+{\bfseries\fontsize{12pt}{18pt}\selectfont}
+{\thesubsubsection}
+{1em}
+{}

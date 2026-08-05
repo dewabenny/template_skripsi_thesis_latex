@@ -14,8 +14,11 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Metadata PDF (`pdftitle`, `pdfauthor`, `pdfsubject`, `pdfkeywords`) otomatis mengikuti `\doc*` di `setting/hyperlink.tex`.
 - Perintah reusable `\makecover` (judul opsional + jenis dokumen opsional) di `preamble/command.tex`.
 - Perintah reusable `\Figure`, `\Table`, `\Equation`, `\Appendix`, `\Source` di `preamble/command.tex`.
+- Sistem tema di `themes/` (`classic`, `modern`, `minimal`, `book`) dengan perintah `\usetheme{...}` di `preamble/command.tex`.
+- Paket `xcolor` di `preamble/packages.tex` (dibutuhkan tema).
 
 ### Berubah
+- `main.tex` memanggil `\usetheme{classic}` (default).
 - `main.tex` memakai `\include` (bukan `\input`) untuk bab-bab dan menyediakan `\includeonly` (komentar) untuk kompilasi cepat.
 - `chapters/03_metode_penelitian.tex` memakai `\Equation` dan `chapters/04_hasil_pembahasan.tex` memakai `\Figure`/`\Table` sebagai contoh.
 - `preamble/package.tex` → `preamble/packages.tex` dan `preamble/setting.tex` → `preamble/settings.tex` (konsistensi penamaan sesuai AGENTS.md).

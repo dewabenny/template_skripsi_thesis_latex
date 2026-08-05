@@ -1,0 +1,58 @@
+% ================================================================
+% THEME — MINIMAL
+% Tampilan ringkas dan bersih tanpa ornamen:
+% - tautan hitam
+% - jarak judul lebih rapat
+% - ukuran judul lebih kecil
+% ================================================================
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+}
+
+\titleformat{\chapter}[display]
+{\centering\bfseries\fontsize{14pt}{18pt}\selectfont}
+{BAB~\thechapter}
+{0.5em}
+{\MakeUppercase}
+
+\titlespacing*{\chapter}
+{0pt}
+{0pt}
+{16pt}
+
+\titleformat{\section}
+{\bfseries\fontsize{11pt}{16pt}\selectfont}
+{\thesection}
+{0.75em}
+{}
+
+\titlespacing*{\section}
+{0pt}
+{12pt}
+{4pt}
+
+\titleformat{\subsection}
+{\bfseries\fontsize{11pt}{16pt}\selectfont}
+{\thesubsection}
+{0.75em}
+{}
+
+\titlespacing*{\subsection}
+{0pt}
+{12pt}
+{4pt}
+
+\titleformat{\subsubsection}
+{\bfseries\fontsize{11pt}{16pt}\selectfont}
+{\thesubsubsection}
+{0.75em}
+{}
+
+\titlespacing*{\subsubsection}
+{0pt}
+{12pt}
+{4pt}

@@ -7,6 +7,23 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 % ================================================================
+%% USETHEME
+%% Pilih tema tampilan dokumen.
+%%
+%% Pemakaian (letakkan di main.tex setelah \input preamble):
+%%   \usetheme{classic}   % bawaan: hitam/netral
+%%   \usetheme{modern}    % aksen biru
+%%   \usetheme{minimal}   % ringkas
+%%   \usetheme{book}      % gaya buku akademik
+%%
+%% Default bila tidak dipilih: classic.
+%% ================================================================
+
+\NewDocumentCommand{\usetheme}{m}{%
+  \input{themes/#1}%
+}
+
+% ================================================================
 %% FIGURE
 %% Sisipkan gambar dengan caption dan label dalam satu perintah.
 %%
