@@ -4,6 +4,16 @@ Semua perubahan penting pada Template LaTeX Penulisan Ilmiah akan dicatat di ber
 
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan versi mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 
+## [Unreleased]
+
+### Ditambahkan
+- `docs/images/` berisi preview halaman (cover, daftar isi, bab, gambar, tabel, daftar pustaka).
+- `AGENTS.md` (aturan arsitektur & kualitas untuk kontributor/agen AI) dan `ai/AGENT_TASKS.md` (roadmap refactoring).
+
+### Berubah
+- `preamble/package.tex` → `preamble/packages.tex` dan `preamble/setting.tex` → `preamble/settings.tex` (konsistensi penamaan sesuai AGENTS.md).
+- `README.md` ditulis ulang: gambaran umum, fitur, pemasangan, mulai cepat, build, struktur proyek, screenshot, roadmap, kontribusi, dan FAQ.
+
 ## [1.0.0] - 2026-08-04
 
 ### Ditambahkan

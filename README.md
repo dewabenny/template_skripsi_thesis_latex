@@ -1,90 +1,87 @@
-# Template LaTeX Penulisan Ilmiah
+# Indonesian Academic LaTeX Framework
 
-Template LaTeX untuk penulisan karya ilmiah Bahasa Indonesia (proposal penelitian, laporan penelitian, tesis, atau laporan fellowship) dengan format khas dokumen ilmiah: halaman judul, abstrak, daftar isi/gambar/tabel, bab-bab terstruktur, dan daftar pustaka gaya Vancouver.
+Kerangka (framework) penulisan ilmiah berbahasa Indonesia berbasis **LuaLaTeX** yang modular, terpelihara, dan siap dipakai ulang. Proyek ini **bukan sekadar template skripsi** — arsitekturnya dirancang untuk mendukung berbagai jenis dokumen akademik.
 
-## Penulis
+## Gambaran Umum
 
-**dr. Dewa Gede Benny Raharja Prabawa, M.Biomed, Sp.M**
+Dokumen ilmiah Indonesia umumnya menuntut format baku: margin khas, font serif (mis. Times New Roman), spasi 1,5, penomoran bab Romawi, daftar isi/gambar/tabel, dan sitasi gaya Vancouver. Framework ini membungkus semua kebutuhan tersebut ke dalam modul-modul kecil yang mudah dikonfigurasi, tanpa mengorbankan konsistensi dan keterpeliharaan kode.
 
-## Lisensi
-
-Distributed under the **MIT License**. Lihat berkas `LICENSE` untuk detail lengkap.
-
-## Struktur Proyek
-
-```
-.
-├── main.tex                  # Berkas utama (menggabungkan seluruh bagian)
-├── preamble/
-│   ├── metadata.tex          # Judul, penulis, pembimbing, institusi, tahun
-│   ├── package.tex           # Daftar paket LaTeX yang digunakan
-│   ├── setting.tex           # Format/spacing/penomoran/kustomisasi tampilan
-│   └── command.tex           # Perintah (command) khusus
-├── frontmatter/
-│   ├── cover.tex             # Halaman sampul
-│   ├── abstract.tex          # Abstrak + kata kunci
-│   └── toctables.tex         # Daftar isi, daftar gambar, daftar tabel
-├── chapters/
-│   ├── 01_pendahuluan.tex    # BAB I Pendahuluan
-│   ├── 02_tinjauan_pustaka.tex
-│   ├── 03_metode_penelitian.tex
-│   ├── 04_hasil_pembahasan.tex
-│   ├── 05_penutup.tex
-│   └── 06_daftar_pustaka.tex
-├── bibliography/
-│   └── references.bib        # Database referensi (format BibTeX)
-├── figures/                  # Simpan berkas gambar di sini
-└── .vscode/
-    └── settings.json         # Konfigurasi build LaTeX Workshop
-```
-
-## Dependensi (Dependency)
-
-### Sistem / TeX Distribution
-
-- **TeX Live** (disarankan versi terbaru) atau distribusi TeX lain dengan **LuaLaTeX**.
-- **Biber** (untuk pemrosesan daftar pustaka).
-- **Font "Times New Roman"** terpasang di sistem (dibutuhkan `fontspec`).
-
-### Paket LaTeX
-
-Paket berikut dimuat otomatis di `preamble/package.tex`:
-
-| Paket | Fungsi |
+| Fitur | Status |
 |-------|--------|
-| `geometry` | Pengaturan margin halaman (A4: kiri 4cm, kanan 3cm, atas/bawah 3cm) |
-| `fontspec` | Pemilihan font (Times New Roman) — butuh LuaLaTeX |
-| `babel` | Bahasa dokumen (Indonesia) |
-| `setspace` | Jarak baris 1,5 spasi |
-| `graphicx` | Penyisipan gambar |
-| `booktabs` | Tabel berkualitas (garis horizontal) |
-| `array` | Format tabel lanjutan |
-| `titlesec` | Format judul bab/section |
-| `caption` | Format keterangan gambar & tabel |
-| `csquotes` | Manajemen tanda kutip |
-| `microtype` | Kerning/tipografi halus |
-| `amsmath` | Notasi matematika |
-| `chngcntr` | Penomoran ulang gambar/tabel per bab |
-| `biblatex` (gaya `vancouver`) | Sitasi & daftar pustaka |
-| `hyperref` | Tautan/link internal PDF |
+| Proposal penelitian | ✅ |
+| Laporan penelitian / fellowship | ✅ |
+| Skripsi (undergraduate thesis) | ✅ |
+| Tesis (master's thesis) | ✅ |
+| Disertasi (dissertation) | 🔜 |
+| Buku akademik (academic book) | 🔜 |
+| Artikel jurnal (journal article) | 🔜 |
 
-### Alat Bantu (Opsional, Disarankan)
+## Fitur
 
-- **VS Code** + ekstensi **LaTeX Workshop** (konfigurasi build sudah tersedia di `.vscode/settings.json`).
+- **LuaLaTeX + Biber** — font modern (`fontspec`), biografi dengan `biblatex` gaya Vancouver.
+- **Modular** — setiap aspek (paket, pengaturan, metadata, perintah) berada di file terpisah.
+- **Metadata terpusat** — identitas dokumen (judul, penulis, institusi, pembimbing) diisi satu kali di `metadata.tex`.
+- **Format khas dokumen ilmiah** — margin A4 (4-3-3-3 cm), spasi 1,5, penomoran gambar/tabel per bab, halaman Romawi→Arab.
+- **Sitasi Vancouver otomatis** — cukup tulis `\supercite{key}`, nomor referensi dibuat oleh Biber.
+- **Sinkronisasi Zotero** — `references.bib` dapat diperbarui otomatis via Better BibTeX.
+- **Mudah dibangun** — VS Code (LaTeX Workshop), `make`, atau `latexmk`.
+- **Roadmap** — menuju class file (`academic-id.cls`), themes, CLI, dan situs dokumentasi.
 
-## Cara Penggunaan (Usage)
+## Pemasangan (Installation)
 
-### Opsi 1 — VS Code (LaTeX Workshop)
+### 1. TeX Distribution
 
-1. Buka folder proyek ini di VS Code.
-2. Buka `main.tex`.
-3. Jalankan build dengan tombol **Build LaTeX project** (▷) di sidebar LaTeX Workshop.
-4. Ekstensi akan otomatis menjalankan: `LuaLaTeX → biber → LuaLaTeX ×2`.
-5. Hasil PDF tersimpan di folder `output/main.pdf` (dibuat otomatis).
+Pasang **TeX Live** (disarankan versi terbaru) atau distribusi TeX lain dengan **LuaLaTeX** dan **Biber**:
 
-### Opsi 2 — Baris Perintah (Command Line)
+- **macOS**: [MacTeX](https://tug.org/mactex/)
+- **Windows**: [MiKTeX](https://miktex.org/) atau TeX Live
+- **Linux**: `sudo apt install texlive-lualatex texlive-bibtex-extra biber` (Debian/Ubuntu) atau `texlive-full`
 
-Jalankan dari folder proyek (root):
+Pastikan `lualatex` dan `biber` tersedia di terminal:
+
+```bash
+lualatex --version
+biber --version
+```
+
+### 2. Font
+
+Framework memakai font **Times New Roman** bawaan sistem. Jika tidak tersedia, ganti `\setmainfont` di `preamble/packages.tex` (lihat [FAQ](#bagaimana-cara-mengganti-font)).
+
+### 3. Clone / Salin
+
+```bash
+git clone https://github.com/username/indonesian-academic-latex-framework.git
+cd indonesian-academic-latex-framework
+```
+
+> Atau salin folder proyek ini ke lokasi pekerjaan Anda.
+
+## Mulai Cepat (Quick Start)
+
+1. Isi identitas dokumen di `preamble/metadata.tex` (judul, penulis, pembimbing, institusi, tahun).
+2. Ganti logo institusi pada `figures/logo_institusi.png` (opsional).
+3. Tulis abstrak di `frontmatter/abstract.tex`.
+4. Tulis isi di `chapters/*.tex` (setiap bab sudah memuat panduan penulisan berupa komentar `%`).
+5. Tambahkan referensi ke `bibliography/references.bib`, lalu kutip dengan `\supercite{key}`.
+6. Bangun dokumen (lihat di bawah).
+
+## Cara Membangun (Build)
+
+### Opsi A — VS Code (LaTeX Workshop)
+
+1. Buka folder proyek di VS Code.
+2. Buka `main.tex` → klik **Build LaTeX project** (▷).
+3. Ekstensi otomatis menjalankan: `LuaLaTeX → biber → LuaLaTeX ×2`.
+4. Hasil PDF: `output/main.pdf`.
+
+### Opsi B — Command Line
+
+```bash
+latexmk -lualatex -outdir=output main.tex
+```
+
+Atau secara manual:
 
 ```bash
 lualatex -output-directory=output main.tex
@@ -93,171 +90,172 @@ lualatex -output-directory=output main.tex
 lualatex -output-directory=output main.tex
 ```
 
-Atau dengan `latexmk`:
+### Opsi C — Makefile
 
 ```bash
-latexmk -lualatex -outdir=output main.tex
+make          # sama dengan make pdf
+make pdf      # build dengan latexmk
+make clean    # hapus artefak build (PDF tetap)
+make cleanall # hapus artefak dan folder output/
 ```
 
-> Catatan: gunakan **LuaLaTeX** (bukan pdfLaTeX) karena dokumen memakai `fontspec` untuk font Times New Roman.
+> ⚠️ Gunakan **LuaLaTeX** (bukan pdfLaTeX) karena dokumen memakai `fontspec`.
 
-## Cara Pengisian (Filling)
+## Struktur Proyek
 
-### 1. Identitas dokumen — `preamble/metadata.tex`
+```
+.
+├── main.tex                  # Berkas utama (preamble + bagian dokumen)
+├── preamble/                 # Konfigurasi & perintah (di-load oleh main.tex)
+│   ├── metadata.tex          # Identitas dokumen (satu-satunya sumber metadata)
+│   ├── packages.tex          # Daftar paket LaTeX + biblatex + hyperref
+│   ├── settings.tex          # Format/spacing/penomoran/caption/toc
+│   └── command.tex           # Perintah (command) khusus yang dapat dipakai ulang
+├── frontmatter/              # Bagian awal dokumen
+│   ├── cover.tex             # Halaman sampul (titlepage)
+│   ├── abstract.tex          # Abstrak + kata kunci
+│   └── toctables.tex         # Daftar isi, daftar gambar, daftar tabel
+├── chapters/                 # Isi per bab (bab I–VI)
+├── bibliography/
+│   └── references.bib        # Database referensi (format BibTeX/Biber)
+├── figures/                  # Gambar & logo
+├── output/                   # Artefak build (otomatis, tidak di-commit)
+├── docs/                     # Dokumentasi & screenshot (lihat README)
+├── .github/                  # Template issue, PR, dan (roadmap) Actions
+└── .vscode/
+    └── settings.json         # Konfigurasi build LaTeX Workshop
+```
 
-Ganti semua nilai di berkas ini:
+## Screenshot
 
-- `\docTitle` — judul penelitian (dalam huruf kapital otomatis).
-- `\docAuthor` — nama penulis.
-- `\Pembimbing` — nama pembimbing (boleh lebih dari satu).
-- `\Program`, `\Department`, `\Faculty`, `\Hospital`, `\University`, `\Location`, `\SubmissionYear` — identitas institusi.
-- `\docSubject`, `\docKeywords` — metadata PDF.
+Tersedia di [docs/images/](docs/images/):
 
-### 2. Halaman sampul — `frontmatter/cover.tex`
+| Halaman | Gambar |
+|---------|--------|
+| Sampul | ![Sampul](docs/images/preview-cover.png) |
+| Daftar Isi | ![Daftar Isi](docs/images/preview-toc.png) |
+| Bab | ![Bab](docs/images/preview-chapter.png) |
+| Gambar | ![Gambar](docs/images/preview-figure.png) |
+| Tabel | ![Tabel](docs/images/preview-table.png) |
+| Daftar Pustaka | ![Daftar Pustaka](docs/images/preview-bibliography.png) |
 
-- Ganti logo dengan meng-*overwrite* `figures/logo_institusi.png` atau sesuaikan perintah `\includegraphics[width=4cm,height=4cm,keepaspectratio]{figures/logo_institusi.png}`.
-- Logo bawaan (`logo_institusi.png`) adalah contoh logo institusi pembuat template dan bersifat opsional. Untuk institusi lain, ganti berkas logo Anda; jika tidak ingin logo, hapus baris `\includegraphics` di `cover.tex`.
+## Roadmap
 
-### 3. Abstrak — `frontmatter/abstract.tex`
+Lihat [ai/AGENT_TASKS.md](ai/AGENT_TASKS.md) untuk rencana detail. Prioritas utama:
 
-Tulis ringkasan masalah, metode, hasil, dan kesimpulan. Perbarui bagian **Kata kunci**.
+- [ ] **Config refactoring** — pecah `settings.tex` menjadi modul `setting/` (spacing, caption, toc, bibliography, dst).
+- [ ] **Metadata generalized** — nilai hardcoded diganti `doc*` commands.
+- [ ] **Reusable cover** — `\makecover` (proposal/tesis/disertasi).
+- [ ] **Chapters via `\include`** — dukungan `\includeonly` untuk kompilasi cepat.
+- [ ] **Reusable commands** — `\Figure`, `\Table`, `\Equation`, `\Appendix`, `\Source`.
+- [ ] **Themes** — `\usetheme{classic|modern|minimal|book}`.
+- [ ] **Documentation site** — MkDocs Material.
+- [ ] **Class file** — `\documentclass{academic-id}`.
 
-### 4. Isi bab — `chapters/*.tex`
+## Kontribusi
 
-Setiap berkas bab sudah berisi **panduan berupa komentar `%`** yang menjelaskan isi dan cara menulis masing-masing bagian. Cara pengisian:
+Kontribusi sangat disambut. Sebelum bekerja, baca:
 
-1. Baca komentar panduan di setiap `\section`/`\subsection`.
-2. Ganti/ketik narasi Anda di bawah judul bagian tersebut (komentar tidak ikut tercetak di PDF).
-3. Hapus atau biarkan komentar contoh — komentar tidak memengaruhi hasil akhir.
-4. Sisipkan gambar di folder `figures/` lalu gunakan lingkungan `figure`, dan tabel dengan `table` (contoh tersedia di `chapters/04_hasil_pembahasan.tex`).
+1. [AGENTS.md](AGENTS.md) — aturan arsitektur dan kualitas untuk kontributor (termasuk agen AI).
+2. [ai/AGENT_TASKS.md](ai/AGENT_TASKS.md) — roadmap refactoring yang sedang berjalan.
 
-### 5. Sitasi dan daftar pustaka
+Pedoman singkat:
 
-1. Tambahkan referensi pada `bibliography/references.bib` (format BibTeX).
-2. Di dalam teks, kutip dengan `\supercite{keyReferensi}` (gaya Vancouver/angka), contoh:
+- Gunakan **LuaLaTeX + Biber** (bukan pdfLaTeX).
+- Setiap perubahan struktural wajib memperbarui README, CHANGELOG, dan dokumentasi terkait.
+- Pastikan dokumen **build tanpa error** minimal 3× berturut-turut (LuaLaTeX → biber → LuaLaTeX → LuaLaTeX).
+- Ikuti konvensi commit: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `ci:`, `build:`.
+
+## Lisensi
+
+Didistribusikan di bawah **MIT License**. Lihat berkas [LICENSE](LICENSE) untuk detail lengkap.
+
+---
+
+## Lampiran: Panduan Pengisian
+
+### Identitas dokumen — `preamble/metadata.tex`
+
+Ganti semua nilai placeholder:
+
+| Perintah | Isi |
+|----------|-----|
+| `\docTitle` | Judul penelitian |
+| `\docAuthor` | Nama penulis |
+| `\Pembimbing` | Nama pembimbing (1 atau lebih) |
+| `\Program` / `\Department` / `\Faculty` / `\Hospital` / `\University` / `\Location` | Identitas institusi |
+| `\SubmissionYear` | Tahun pengajuan |
+| `\docSubject` / `\docKeywords` | Metadata PDF |
+
+### Halaman sampul — `frontmatter/cover.tex`
+
+- Ganti logo: overwrite `figures/logo_institusi.png` atau ubah nama file pada `\includegraphics`.
+- Untuk menghilangkan logo, hapus baris `\includegraphics` tersebut.
+
+### Sitasi & daftar pustaka
+
+1. Tambahkan referensi ke `bibliography/references.bib`.
+2. Kutip dengan `\supercite{key}`:
 
    ```latex
    Trauma okuli merupakan penyebab utama kebutaan.\supercite{keyReferensi1,keyReferensi2}
    ```
 
-3. Bangun ulang dokumen (lihat bagian Cara Penggunaan). Daftar pustaka akan tampil otomatis di Bab VI.
+3. Bangun ulang dokumen. Daftar pustaka tampil otomatis di Bab VI.
 
-> Catatan: nomor sitasi dan daftar pustaka dihasilkan otomatis oleh biber/biblatex, jadi cukup tulis key-nya saja.
+> Nomor sitasi dan daftar pustaka dibuat otomatis oleh biber/biblatex — cukup tulis key-nya.
 
-## Sitasi Otomatis dengan Zotero (Auto-Sync)
+### Sinkronisasi Zotero (Better BibTeX)
 
-Sitasi pada template ini memakai biblatex/biber yang membaca `bibliography/references.bib`. Anda dapat menghubungkan **Zotero** agar berkas `references.bib` diperbarui otomatis setiap kali koleksi referensi berubah, sehingga pengelolaan referensi cukup dilakukan di Zotero — tanpa mengedit `.bib` secara manual.
+1. Pasang [Zotero](https://www.zotero.org) + [Better BibTeX](https://retorque.re/zotero-better-bibtex).
+2. Buat koleksi di Zotero (mis. `Proposal Glaukoma`).
+3. **Zotero → Preferences → Better BibTeX → Export → Automatic export (+)**: pilih koleksi, format `Better BibTeX`, file → `bibliography/references.bib`.
+4. Salin cite key dari Zotero (klik kanan → **Copy citation key**) dan kutip dengan `\supercite{key}`.
 
-### 1. Persiapan
-
-1. Pasang **Zotero** (<https://www.zotero.org>).
-2. Pasang ekstensi **Better BibTeX for Zotero** (<https://retorque.re/zotero-better-bibtex>) — diperlukan untuk fitur auto-export.
-3. Mulai ulang (restart) Zotero setelah ekstensi terpasang.
-
-### 2. Buat koleksi di Zotero
-
-1. Di panel kiri Zotero, buat **koleksi** (collection) khusus dokumen ini, misal `Proposal Glaukoma`.
-2. Masukkan semua referensi yang dibutuhkan ke dalam koleksi tersebut.
-
-### 3. Set auto-export ke references.bib
-
-**Cara A — lewat Preferences (disarankan):**
-
-1. Buka **Zotero → Preferences/Setelan → tab Better BibTeX → Export**.
-2. Pada bagian **Automatic export**, klik **+** untuk menambah baris:
-   - **Collection**: pilih koleksi (mis. `Proposal Glaukoma`).
-   - **Format**: pilih `Better BibTeX` (atau `BibLaTeX`).
-   - **File**: arahkan ke `bibliography/references.bib` di folder proyek ini.
-3. Klik **OK**. Zotero kini menulis ulang `references.bib` otomatis pada setiap perubahan referensi.
-
-**Cara B — lewat Export Collection (alternatif cepat):**
-
-1. Klik kanan koleksi → **Export Collection...**.
-2. Pilih format **Better BibTeX**, lalu centang **Keep updated** (auto-export).
-3. Simpan ke `bibliography/references.bib`.
-
-### 4. Mengutip di dokumen
-
-- **Cite key** dibuat otomatis oleh Better BibTeX dengan pola `penulisTahunJudul`, contoh `ngTraumaticGlaucoma2026` (sama dengan format key pada template ini).
-- Salin key dengan klik kanan item di Zotero → **Better BibTeX → Copy citation key**.
-- Kutip di teks dengan `\supercite{}`:
-
-  ```latex
-  Trauma okuli merupakan penyebab utama kebutaan.\supercite{ngTraumaticGlaucoma2026,negrelGlobalImpactEye1998a}
-  ```
-
-- Setelah menambah/mengubah referensi di Zotero, **bangun ulang dokumen** (LuaLaTeX → biber → LuaLaTeX×2) agar nomor sitasi dan daftar pustaka ikut diperbarui.
-
-### 5. Catatan penting
-
-- Saat auto-export aktif, **jangan mengedit `references.bib` secara manual** — berkas akan ditimpa oleh Zotero.
-- Pastikan path export sama dengan `\addbibresource{bibliography/references.bib}` di `preamble/package.tex`, dan jalankan build dari folder proyek (root).
-- Bila sitasi yang ditulis tidak ditemukan (peringatan *undefined citations* dari biber), pastikan referensinya sudah masuk koleksi dan auto-export sudah berjalan.
+> Jangan mengedit `references.bib` manual selama auto-export aktif — berkas akan ditimpa Zotero.
 
 ## FAQ
 
-### 1. Cara mengganti font
+### Bagaimana cara mengganti font?
 
-Buka `preamble/package.tex`, ubah baris berikut:
+Buka `preamble/packages.tex`, ubah:
 
 ```latex
 \setmainfont{Times New Roman}
 ```
 
-Ganti `Times New Roman` dengan nama font yang terpasang di sistem Anda, misalnya:
+Ganti dengan font yang terpasang di sistem (cek via `fc-list`):
 
 ```latex
-\setmainfont{Georgia}
-\setmainfont{Times New Roman}      % default template
 \setmainfont{TeX Gyre Termes}      % alternatif gratis, mirip Times
 \setmainfont{Liberation Serif}     % alternatif gratis, mirip Times
+\setmainfont{Georgia}
 ```
 
-- Nama font harus persis seperti yang dikenal sistem (cek daftar font dengan perintah `fc-list` di terminal).
-- Ukuran font dasar diatur pada `main.tex` baris 1: `\documentclass[12pt]{report}` (ganti `12pt` → `11pt` atau `10pt`).
-- Ukuran font khusus untuk judul bab/section diatur terpisah di `preamble/setting.tex` (`\fontsize{...}{...}` pada `\titleformat`).
-- Setelah mengubah font, **gunakan LuaLaTeX** (fontspec tidak bekerja dengan pdfLaTeX).
+> Gunakan **LuaLaTeX** — `fontspec` tidak bekerja dengan pdfLaTeX.
 
-### 2. Cara mengubah margin
+### Bagaimana cara mengubah margin?
 
-Margin diatur di `preamble/package.tex` baris 1:
+Buka `preamble/packages.tex` baris 1:
 
 ```latex
 \usepackage[a4paper,left=4cm,right=3cm,top=3cm,bottom=3cm]{geometry}
 ```
 
-- `left`/`right`/`top`/`bottom` = margin dalam sentimeter (bisa juga `mm`/`in`).
-- Contoh margin 2,5 cm semua sisi:
+### Bagaimana cara memasukkan gambar & tabel?
 
-  ```latex
-  \usepackage[a4paper,margin=2.5cm]{geometry}
-  ```
+Gambar — simpan di `figures/`, lalu:
 
-- Untuk ukuran kertas lain, ganti `a4paper` → `letterpaper`, `a5paper`, atau `legalpaper`.
+```latex
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/nama_file_gambar}
+\caption{Keterangan gambar di sini.}
+\label{fig:contoh}
+\end{figure}
+```
 
-### 3. Cara memasukkan gambar dan tabel
-
-**Gambar:**
-
-1. Simpan berkas gambar ke folder `figures/` (format PNG/JPG/PDF; SVG perlu dikonversi dulu).
-2. Sisipkan dengan lingkungan `figure`:
-
-   ```latex
-   \begin{figure}[ht]
-   \centering
-   \includegraphics[width=0.8\linewidth]{figures/nama_file_gambar}
-   \caption{Keterangan gambar di sini.}
-   \label{fig:contoh}
-   \end{figure}
-   ```
-
-3. Rujuk di teks dengan `Gambar~\ref{fig:contoh}`. Nomor gambar dibuat otomatis (mis. Gambar 4.1).
-
-> Tips: kendalikan ukuran dengan `width=`/`height=` (dalam `\linewidth` atau `cm`). Contoh lengkap ada di `chapters/04_hasil_pembahasan.tex`.
-
-**Tabel:**
-
-Gunakan paket `booktabs` (garis `\toprule`, `\midrule`, `\bottomrule`):
+Tabel (gaya `booktabs`):
 
 ```latex
 \begin{table}[ht]
@@ -275,27 +273,14 @@ B & Contoh data B \\
 \end{table}
 ```
 
-Rujuk di teks dengan `Tabel~\ref{tab:contoh}`. Nomor tabel dibuat otomatis (mis. Tabel 4.1).
+Rujuk di teks dengan `Gambar~\ref{fig:contoh}` / `Tabel~\ref{tab:contoh}`. Nomor dibuat otomatis (mis. Gambar 4.1).
 
-### 4. Cara mengatur halaman / layout dokumen
+### Di mana pengaturan layout?
 
-Pengaturan utama tersebar di `preamble/setting.tex` dan `preamble/package.tex`:
-
-| Pengaturan | Lokasi | Cara mengubah |
-|------------|--------|---------------|
-| Spasi baris | `setting.tex` | `\onehalfspacing` → `\singlespacing` atau `\doublespacing` |
-| Indentasi paragraf | `setting.tex` | `\setlength{\parindent}{1.27cm}` |
-| Jarak antar paragraf | `setting.tex` | `\setlength{\parskip}{0pt}` |
-| Format & ukuran judul bab | `setting.tex` | Blok `\titleformat{\chapter}...` (ubah `\fontsize{16pt}{20pt}`, teks "BAB", `\MakeUppercase`) |
-| Format section/subsection | `setting.tex` | Blok `\titleformat{\section}` / `\subsection` |
-| Ukuran & jenis kertas, margin | `package.tex` | `geometry` (lihat FAQ no. 2) |
-| Penomoran gambar/tabel per bab | `setting.tex` | `\numberwithin{figure}{chapter}` / `\numberwithin{table}{chapter}` |
-| Penomoran halaman (romawi/arab) | `frontmatter/toctables.tex` | `\pagenumbering{roman}` / `\pagenumbering{arabic}` |
-| Jarak baris ganda antar-baris judul | `setting.tex` | Nilai kedua pada `\fontsize{ukuran}{jarak}` |
-
-Setelah mengubah pengaturan apa pun, **bangun ulang dokumen** (LuaLaTeX → biber → LuaLaTeX×2).
-
-## Catatan
-
-- Judul bab, nomor halaman, daftar isi, dan penomoran gambar/tabel dibuat otomatis — tidak perlu diatur manual.
-- Jika font "Times New Roman" tidak tersedia, ganti `\setmainfont{Times New Roman}` di `preamble/package.tex` dengan font yang tersedia (mis. `Liberation Serif` atau `TeX Gyre Termes`).
+| Pengaturan | Lokasi |
+|------------|--------|
+| Spasi baris / indentasi | `settings.tex` (`\onehalfspacing`, `\parindent`) |
+| Format & ukuran judul bab/section | `settings.tex` (blok `\titleformat`) |
+| Margin & kertas | `packages.tex` (`geometry`) |
+| Penomoran gambar/tabel per bab | `settings.tex` (`\numberwithin`) |
+| Penomoran halaman Romawi/Arab | `frontmatter/toctables.tex` (`\pagenumbering`) |
