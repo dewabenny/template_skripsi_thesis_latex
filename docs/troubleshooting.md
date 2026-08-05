@@ -33,6 +33,9 @@ Cek daftar font terpasang:
 fc-list | grep -i times
 ```
 
+> Lihat [Referensi Font](installation.md#referensi-font) untuk katalog dan
+> dokumentasi font resmi bila perlu mencari alternatif yang cocok.
+
 ### `Biber` tidak dijalankan / undefined citations
 
 **Penyebab:** alur build tidak menjalankan Biber.

@@ -23,6 +23,10 @@ Buka `preamble/packages.tex`:
 Ganti dengan font yang terpasang (mis. `TeX Gyre Termes`, `Liberation Serif`,
 `Georgia`).
 
+> Lihat [Referensi Font](installation.md#referensi-font) di halaman Pemasangan
+> untuk daftar katalog dan dokumentasi font yang kredibel (mis. LaTeX Font
+> Catalogue, dokumentasi `fontspec`, TeX Gyre, Google Fonts).
+
 ## Penulisan
 
 ### Bagaimana cara mengubah margin?

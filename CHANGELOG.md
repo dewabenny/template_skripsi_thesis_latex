@@ -22,6 +22,7 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Contoh di `examples/`: `proposal`, `thesis`, `dissertation`, `book` (memakai framework yang sama; build dengan `make examples`).
 - Dokumentasi website MkDocs Material: `mkdocs.yml`, `docs/requirements.txt`, halaman `commands.md` dan `examples.md`.
 - Halaman dokumentasi `docs/chapters.md` — panduan menyusun, menambah, dan memisah bab (mis. Hasil & Pembahasan terpisah).
+- Bagian "Referensi Font" di `docs/installation.md` dengan tautan kredibel (LaTeX Font Catalogue, dokumentasi `fontspec`, LaTeX Project, TeX Gyre, Google Fonts); FAQ dan Troubleshooting merujuk ke sana.
 - GitHub Actions `.github/workflows/docs.yml` untuk deploy situs dokumentasi ke GitHub Pages.
 - Class file `academic-id.cls` — membungkus seluruh framework (metadata, packages, settings, command) sehingga cukup `\documentclass{academic-id}`.
 - Contoh `examples/class/` untuk pemakaian class file.

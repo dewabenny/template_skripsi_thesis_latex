@@ -55,6 +55,25 @@ Alternatif gratis yang kompatibel:
 
 > Gunakan **LuaLaTeX** — `fontspec` tidak bekerja dengan pdfLaTeX.
 
+### Referensi Font
+
+Untuk memilih font yang sesuai, rujuk sumber-sumber berikut (kredibel):
+
+| Sumber | Isi |
+|--------|-----|
+| [The LaTeX Font Catalogue (TUG)](https://tug.org/FontCatalogue/) | Katalog font resmi komunitas TeX; berisi contoh dan cara pakai tiap font di LaTeX |
+| [Dokumentasi fontspec (CTAN)](https://ctan.org/pkg/fontspec) | Dokumentasi resmi paket `fontspec` — memilih font, varian, dan opsi untuk LuaLaTeX/XeLaTeX |
+| [LaTeX 2ε Font Selection (The LaTeX Project)](https://www.latex-project.org/help/documentation/fntguide.pdf) | Panduan resmi (PDF) pemilihan font di LaTeX dari The LaTeX Project |
+| [TeX Gyre fonts (GUST e-foundry)](https://www.gust.org.pl/projects/e-foundry/tex-gyre) | Keluarga font gratis berkualitas (Termes, Pagella, Heros, dll.) dari GUST |
+| [Google Fonts](https://fonts.google.com/) | Direktori ribuan font gratis (periksa lisensi & dukungan OpenType sebelum dipakai) |
+| [Liberation Fonts](https://github.com/liberationfonts/liberation-fonts) | Font metrik-kompatibel Times/Arial/Courier (sumber terbuka) |
+| [GUIDE to using fonts with LaTeX](https://www.tug.org/pracjourn/2005-2/berry/) | Artikel *The PracTeX Journal* tentang memilih font di LaTeX (Taylor, 2005) |
+
+> Pedoman: pilih font yang (1) memiliki lisensi bebas untuk dokumen Anda,
+> (2) terpasang di sistem (cek `fc-list`), dan (3) mendukung karakter yang
+> Anda butuhkan — umumnya font **serif** lebih cocok untuk dokumen akademik,
+> sedangkan **sans-serif** baik untuk judul/slide.
+
 ## 3. Alat Bantu (Opsional)
 
 - **VS Code** + ekstensi [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop).
