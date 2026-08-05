@@ -16,6 +16,7 @@ output/
 *.xdv
 *.bbl-SAVE-ERROR
 *.pdf
+/main.pdf
 
 # macOS
 .DS_Store

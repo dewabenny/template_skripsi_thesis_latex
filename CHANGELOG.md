@@ -17,9 +17,11 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Sistem tema di `themes/` (`classic`, `modern`, `minimal`, `book`) dengan perintah `\usetheme{...}` di `preamble/command.tex`.
 - Paket `xcolor` di `preamble/packages.tex` (dibutuhkan tema).
 - Dokumentasi Markdown di `docs/`: `index`, `installation`, `architecture`, `packages`, `settings`, `metadata`, `bibliography`, `themes`, `troubleshooting`, `faq`.
+- Target Makefile baru: `make pdf`, `make watch`, `make release`, `make lint`.
 
 ### Berubah
 - `main.tex` memanggil `\usetheme{classic}` (default).
+- Makefile lama diperluas mendukung latexmk penuh (`-pvc`, `-c`, `-C`) dan validasi log.
 - README merujuk ke `docs/` untuk dokumentasi detail.
 - `main.tex` memakai `\include` (bukan `\input`) untuk bab-bab dan menyediakan `\includeonly` (komentar) untuk kompilasi cepat.
 - `chapters/03_metode_penelitian.tex` memakai `\Equation` dan `chapters/04_hasil_pembahasan.tex` memakai `\Figure`/`\Table` sebagai contoh.
