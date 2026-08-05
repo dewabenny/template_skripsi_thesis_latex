@@ -1,0 +1,41 @@
+% ================================================================
+% SETTINGS — TOC / LOF / LOT
+% Format daftar isi, daftar gambar, dan daftar tabel.
+% ================================================================
+
+\makeatletter
+
+\renewcommand{\tableofcontents}{
+    \chapter*{
+        \centering
+        \bfseries
+        \fontsize{16pt}{20pt}\selectfont
+        DAFTAR ISI
+    }
+
+    \@starttoc{toc}
+}
+
+\renewcommand{\listoffigures}{
+    \chapter*{
+        \centering
+        \bfseries
+        \fontsize{16pt}{20pt}\selectfont
+        DAFTAR GAMBAR
+    }
+
+    \@starttoc{lof}
+}
+
+\renewcommand{\listoftables}{
+    \chapter*{
+        \centering
+        \bfseries
+        \fontsize{16pt}{20pt}\selectfont
+        DAFTAR TABEL
+    }
+
+    \@starttoc{lot}
+}
+
+\makeatother

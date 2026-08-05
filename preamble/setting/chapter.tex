@@ -1,0 +1,17 @@
+% ================================================================
+% SETTINGS — CHAPTER
+% Format judul BAB dan penomorannya (Romawi).
+% ================================================================
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+\titleformat{\chapter}[display]
+{\centering\bfseries\fontsize{16pt}{20pt}\selectfont}
+{BAB~\thechapter}
+{0.5em}
+{\MakeUppercase}
+
+\titlespacing*{\chapter}
+{0pt}
+{0pt}
+{20pt}

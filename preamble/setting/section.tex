@@ -1,0 +1,46 @@
+% ================================================================
+% SETTINGS — SECTION
+% Format judul section, subsection, dan subsubsection.
+% ================================================================
+
+\renewcommand{\thesection}
+{\arabic{chapter}.\arabic{section}}
+
+\titleformat{\section}
+{\bfseries\fontsize{12pt}{18pt}\selectfont}
+{\thesection}
+{1em}
+{}
+
+\titlespacing*{\section}
+{0pt}
+{18pt}
+{6pt}
+
+\renewcommand{\thesubsection}
+{\thesection.\arabic{subsection}}
+
+\titleformat{\subsection}
+{\bfseries\fontsize{12pt}{18pt}\selectfont}
+{\thesubsection}
+{1em}
+{}
+
+\titlespacing*{\subsection}
+{0pt}
+{18pt}
+{6pt}
+
+\renewcommand{\thesubsubsection}
+{\thesubsection.\arabic{subsubsection}}
+
+\titleformat{\subsubsection}
+{\bfseries\fontsize{12pt}{18pt}\selectfont}
+{\thesubsubsection}
+{1em}
+{}
+
+\titlespacing*{\subsubsection}
+{0pt}
+{18pt}
+{6pt}

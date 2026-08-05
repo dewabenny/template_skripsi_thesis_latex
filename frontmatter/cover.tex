@@ -16,12 +16,12 @@
 \vspace{2cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LOGO
-%% Ganti dengan logo Anda: simpan berkas di folder figures/
-%% (mis. figures/logo.png), lalu sesuaikan nama file di bawah.
+% LOGO
+% Path logo diambil dari \docLogo (preamble/metadata.tex).
+% Simpan berkas logo di folder figures/.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\includegraphics[width=4cm,height=4cm,keepaspectratio]{figures/logo_institusi.png}
+\includegraphics[width=4cm,height=4cm,keepaspectratio]{\docLogo}
 
 \vspace{2cm}
 
@@ -54,7 +54,7 @@ Telah diperiksa dan disetujui oleh : \\
 
 {\bfseries
 \fontsize{12pt}{18pt}\selectfont
-\Pembimbing
+\docSupervisor
 }
 
 \vfill
@@ -66,17 +66,17 @@ Telah diperiksa dan disetujui oleh : \\
 {\bfseries
 \fontsize{12pt}{18pt}\selectfont
 
-\Program
+\docProgram
 
-%\Department
+%\docDepartment
 
-%\Faculty
+%\docFaculty
 
-\Hospital
+\docHospital
 
-\Location
+\docLocation
 
-\SubmissionYear
+\docYear
 
 }
 

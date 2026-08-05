@@ -1,19 +1,43 @@
 % ================================================================
 % IDENTITAS DOKUMEN
-% Ganti semua nilai di bawah ini dengan identitas penelitian Anda.
-% Nilai yang ada saat ini hanya contoh (placeholder).
+% Satu-satunya sumber metadata dokumen. Ganti semua nilai di bawah
+% ini dengan identitas penelitian Anda. Jangan hardcode nilai-nilai
+% ini di file lain — gunakan perintah (command) yang didefinisikan
+% di sini.
+%
+% Konvensi penamaan: docTitle, docAuthor, docFaculty, docUniversity,
+% docDepartment, docProgram, docSupervisor, docLogo, docYear, dst.
+% ================================================================
+
+% ================================================================
+% JUDUL & SUBJUDUL
 % ================================================================
 
 \newcommand{\docTitle}{
     Judul Penelitian Anda
 }
 
+\newcommand{\docSubtitle}{
+    % Isi opsional; biarkan kosong bila tidak ada subjudul.
+}
+
+% ================================================================
+% PENULIS
+% ================================================================
+
 \newcommand{\docAuthor}{
     Nama Lengkap Penulis
 }
 
-\newcommand{\Pembimbing}{
+\newcommand{\docStudentID}{
+    % Nomor induk mahasiswa / NIP (opsional).
+}
 
+% ================================================================
+% PEMBIMBING
+% ================================================================
+
+\newcommand{\docSupervisor}{
     \begin{tabular}{c}
         Nama Pembimbing 1 \\
         Nama Pembimbing 2 \\
@@ -21,36 +45,48 @@
     \end{tabular}
 }
 
+\newcommand{\docCosupervisor}{
+    % Nama pembimbing pendamping (opsional).
+}
+
 % ================================================================
 % INSTITUSI
 % ================================================================
 
-\newcommand{\Program}{
+\newcommand{\docProgram}{
     PROGRAM STUDI
 }
 
-\newcommand{\Department}{
+\newcommand{\docDepartment}{
     DEPARTEMEN
 }
 
-\newcommand{\Faculty}{
+\newcommand{\docFaculty}{
     FAKULTAS
 }
 
-\newcommand{\Hospital}{
+\newcommand{\docHospital}{
     RUMAH SAKIT
 }
 
-\newcommand{\University}{
+\newcommand{\docUniversity}{
     UNIVERSITAS
 }
 
-\newcommand{\Location}{
+\newcommand{\docLocation}{
     KOTA
 }
 
-\newcommand{\SubmissionYear}{
+\newcommand{\docYear}{
     2026
+}
+
+% ================================================================
+% LOGO
+% ================================================================
+
+\newcommand{\docLogo}{
+    figures/logo_institusi.png
 }
 
 % ================================================================
@@ -64,3 +100,19 @@
 \newcommand{\docKeywords}{
     Kata kunci 1, Kata kunci 2, Kata kunci 3
 }
+
+% ================================================================
+% ALIAS (BACKWARD COMPATIBILITY)
+% Nama lama tetap tersedia sebagai alias agar dokumen yang memakai
+% \Program, \Faculty, \Pembimbing, dll. tetap dapat dikompilasi.
+% Gunakan penamaan doc* untuk dokumen baru.
+% ================================================================
+
+\let\Pembimbing\docSupervisor
+\let\Program\docProgram
+\let\Department\docDepartment
+\let\Faculty\docFaculty
+\let\Hospital\docHospital
+\let\University\docUniversity
+\let\Location\docLocation
+\let\SubmissionYear\docYear
