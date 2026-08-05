@@ -1,1 +1,113 @@
+% ================================================================
+% COMMANDS
+% Perintah (command) khusus yang dapat dipakai ulang.
+% Semua nilai dokumen berasal dari preamble/metadata.tex (\doc*).
+% ================================================================
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+% ================================================================
+%% MAKECOVER
+%% Halaman sampul (titlepage) yang dapat dipakai ulang.
+%% Membaca seluruh identitas dari metadata.tex.
+%%
+%% Pemakaian:
+%%   \makecover                          % judul dari \docTitle
+%%   \makecover[Judul Pengganti]         % override judul
+%%   \makecover[][Skripsi]               % jenis dokumen (proposal/skripsi/tesis/disertasi/laporan)
+%%
+%% Contoh jenis dokumen: Proposal, Skripsi, Tesis, Disertasi,
+%% Laporan Akhir, dsb. Biarkan argumen ke-2 kosong untuk mengabaikan.
+%% ================================================================
+
+\makeatletter
+
+\NewDocumentCommand{\makecover}{ o o }{%
+  \begin{titlepage}
+
+  \thispagestyle{empty}
+
+  \begin{center}
+
+  % JUDUL
+  {\bfseries
+  \fontsize{16pt}{20pt}\selectfont
+  \MakeUppercase{\IfValueTF{#1}{#1}{\docTitle}}
+  }
+
+  % OPTIONAL: SUBJUDUL
+  \ifx\docSubtitle\@empty\relax\else
+  {\fontsize{14pt}{18pt}\selectfont
+  \docSubtitle
+  }
+  \fi
+
+  % OPTIONAL: JENIS DOKUMEN
+  \IfValueT{#2}{%
+  \vspace{1cm}
+  {\fontsize{12pt}{18pt}\selectfont
+  #2
+  }
+  }
+
+  \vspace{1.5cm}
+
+  % LOGO (path dari \docLogo)
+  \includegraphics[width=4cm,height=4cm,keepaspectratio]{\docLogo}
+
+  \vspace{2cm}
+
+  % PENULIS
+  {\fontsize{12pt}{18pt}\selectfont
+  Disusun oleh
+  }
+
+  \vspace{0.5cm}
+
+  {\bfseries
+  \fontsize{12pt}{18pt}\selectfont
+  \docAuthor
+  }
+
+  \vspace{1.5cm}
+
+  % PEMBIMBING
+  {\fontsize{12pt}{18pt}\selectfont
+  Telah diperiksa dan disetujui oleh : \\
+  }
+
+  \vspace{0.5cm}
+
+  {\bfseries
+  \fontsize{12pt}{18pt}\selectfont
+  \docSupervisor
+  }
+
+  \vfill
+
+  % INSTITUSI
+  {\bfseries
+  \fontsize{12pt}{18pt}\selectfont
+
+  \docProgram
+
+  %\docDepartment
+
+  %\docFaculty
+
+  \docHospital
+
+  \docLocation
+
+  \docYear
+
+  }
+
+  \end{center}
+
+  \end{titlepage}
+
+  \clearpage
+}
+
+\makeatother

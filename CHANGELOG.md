@@ -12,6 +12,7 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - `preamble/setting/` — modul pengaturan terpisah: `spacing`, `typography`, `chapter`, `section`, `numbering`, `caption`, `toc`, `bibliography`, `hyperlink`.
 - Metadata `docSubtitle`, `docStudentID`, `docCosupervisor`, `docLogo` di `preamble/metadata.tex`.
 - Metadata PDF (`pdftitle`, `pdfauthor`, `pdfsubject`, `pdfkeywords`) otomatis mengikuti `\doc*` di `setting/hyperlink.tex`.
+- Perintah reusable `\makecover` (judul opsional + jenis dokumen opsional) di `preamble/command.tex`.
 
 ### Berubah
 - `preamble/package.tex` → `preamble/packages.tex` dan `preamble/setting.tex` → `preamble/settings.tex` (konsistensi penamaan sesuai AGENTS.md).
@@ -19,6 +20,7 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Konfigurasi `hyperref` dipindah dari `packages.tex` ke `setting/hyperlink.tex`.
 - Metadata digeneralisasi: `\Program`→`\docProgram`, `\Faculty`→`\docFaculty`, `\University`→`\docUniversity`, `\Department`→`\docDepartment`, `\Hospital`→`\docHospital`, `\Location`→`\docLocation`, `\SubmissionYear`→`\docYear`, `\Pembimbing`→`\docSupervisor`. Nama lama tetap tersedia sebagai alias (backward compatible).
 - `cover.tex` memakai `\docLogo` dan `\doc*` dari metadata.
+- `cover.tex` menjadi pemanggil `\makecover` (layout cover sepenuhnya reusable di `command.tex`).
 - `README.md` ditulis ulang: gambaran umum, fitur, pemasangan, mulai cepat, build, struktur proyek, screenshot, roadmap, kontribusi, dan FAQ.
 
 ## [1.0.0] - 2026-08-04

@@ -1,87 +1,12 @@
-\begin{titlepage}
+% ================================================================
+% COVER
+% Halaman sampul (titlepage). Memanggil perintah reusable \makecover
+% yang didefinisikan di preamble/command.tex.
+%
+% Pemakaian lanjutan:
+%   \makecover                              % judul dari \docTitle
+%   \makecover[Judul Pengganti]             % override judul
+%   \makecover[][Proposal Penelitian]       % + jenis dokumen
+% ================================================================
 
-\thispagestyle{empty}
-
-\begin{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% JUDUL
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-{\bfseries
-\fontsize{16pt}{20pt}\selectfont
-\MakeUppercase{\docTitle}
-}
-
-\vspace{2cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LOGO
-% Path logo diambil dari \docLogo (preamble/metadata.tex).
-% Simpan berkas logo di folder figures/.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\includegraphics[width=4cm,height=4cm,keepaspectratio]{\docLogo}
-
-\vspace{2cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PENULIS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-{\fontsize{12pt}{18pt}\selectfont
-Disusun oleh
-}
-
-\vspace{0.5cm}
-
-{\bfseries
-\fontsize{12pt}{18pt}\selectfont
-\docAuthor
-}
-
-\vspace{1.5cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PEMBIMBING
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-{\fontsize{12pt}{18pt}\selectfont
-Telah diperiksa dan disetujui oleh : \\
-}
-
-\vspace{0.5cm}
-
-{\bfseries
-\fontsize{12pt}{18pt}\selectfont
-\docSupervisor
-}
-
-\vfill
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% INSTITUSI
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-{\bfseries
-\fontsize{12pt}{18pt}\selectfont
-
-\docProgram
-
-%\docDepartment
-
-%\docFaculty
-
-\docHospital
-
-\docLocation
-
-\docYear
-
-}
-
-\end{center}
-
-\end{titlepage}
-
-\clearpage
+\makecover
