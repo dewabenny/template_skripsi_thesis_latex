@@ -20,6 +20,14 @@ jobs:
             texlive-bibtex-extra texlive-plain-generic \
             lmodern latexmk biber
 
+      - name: Install fonts (Times New Roman + Latin Modern)
+        run: |
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" \
+            | sudo debconf-set-selections
+          sudo apt-get install -y --no-install-recommends \
+            ttf-mscorefonts-installer fonts-lmodern fonts-texgyre || true
+          luaotfload-tool --update --force || true
+
       - name: Compile document
         run: |
           latexmk -lualatex -outdir=output main.tex
