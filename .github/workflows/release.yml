@@ -28,7 +28,9 @@ jobs:
             | sudo debconf-set-selections
           sudo apt-get install -y --no-install-recommends \
             ttf-mscorefonts-installer fonts-lmodern fonts-texgyre || true
+          sudo fc-cache -f
           luaotfload-tool --update --force || true
+          fc-list | grep -i "times" || true
 
       - name: Compile document
         run: |
